@@ -1,0 +1,31 @@
+
+state={
+	id=686
+	name="STATE_686"
+
+	history={
+		add_core_of = PUE
+		owner = PUE
+		victory_points = {
+			1440 10
+		}
+
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 1
+			dockyard = 2
+			air_base = 4
+			1440 = {
+				naval_base = 3
+			}
+		}
+	}
+
+	provinces={
+		1440 
+	}
+	manpower=114715
+	buildings_max_level_factor=1.000
+	state_category = large_town
+}

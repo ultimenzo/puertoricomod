@@ -1,0 +1,23 @@
+state={
+	id=837
+	name="STATE_837"
+	provinces={
+		13238 
+	}
+	state_category = town
+
+	history={
+		add_core_of = PUE
+		owner = PUE
+		victory_points = {
+			13238 5
+		}
+
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+		}
+	}
+	manpower=415826
+	buildings_max_level_factor=1.000
+}

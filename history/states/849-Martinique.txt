@@ -1,0 +1,25 @@
+state={
+	id=849
+	name="STATE_850"
+	provinces={
+		177 
+	}
+
+	history={
+		add_core_of = GDL
+		owner = FRA
+		victory_points = {
+			177 1 
+		}
+		buildings = {
+			infrastructure = 4
+			177 = {
+				naval_base = 2
+
+			}
+		}
+	}
+	manpower=222002
+	state_category = small_island
+	buildings_max_level_factor=1.000
+}

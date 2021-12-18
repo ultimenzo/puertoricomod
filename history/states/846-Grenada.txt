@@ -1,0 +1,26 @@
+state={
+	id=846
+	name="STATE_846"
+	history={
+		add_core_of = BAS
+		owner = ENG
+		victory_points = {
+			11106 1 
+		}
+		buildings = {
+			infrastructure = 4
+			11106 = {
+				naval_base = 2
+
+			}
+		}
+	}
+
+	provinces={
+		11106 
+	}
+
+	manpower=76681
+	state_category = small_island
+	buildings_max_level_factor=1.000
+}

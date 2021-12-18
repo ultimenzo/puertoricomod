@@ -1,0 +1,37 @@
+leader_traits = {
+	PUE_oppressing_nationalists = {
+		random = no
+		sprite = 13
+
+		fascism_drift = -0.01
+		political_power_factor = -0.30
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	PUE_lacking_support = {
+		random = no 
+		sprite = 13
+
+		army_attack_factor = -0.20
+		political_power_factor = -0.50
+		war_support_factor = -0.50
+		stability_factor = -0.50
+	}
+
+	PUE_unifier = {
+		random = no
+		sprite = 13
+
+		political_power_factor = 0.15
+	}
+
+	PUE_emergency_powers = {
+		random = no
+		sprite = 13
+		
+		political_power_factor = 0.10
+		stability_weekly = 0.01
+	}
+}

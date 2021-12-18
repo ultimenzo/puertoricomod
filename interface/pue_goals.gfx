@@ -1,0 +1,30 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_goal_pue_liberty"
+		textureFile = "gfx//interface//goals//focus_PUE_liberty.dds"
+	}
+	spriteType = {
+		name = "GFX_goal_PUE_occupy_haiti"
+		textureFile = "gfx//interface//goals//focus_PUE_occupy_haiti.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_PUE_seize_cuba"
+		textureFile = "gfx//interface//goals//focus_PUE_seize_cuba.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_PUE_unite_with_dominican_republic"
+		textureFile = "gfx//interface//goals//focus_PUE_unite_with_dominican_republic.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_PUE_form_the_commonwealth"
+		textureFile = "gfx//interface//goals//focus_PUE_form_the_commonwealth.dds"
+	}
+
+	spriteType = {
+		name = "GFX_goal_PUE_continue_with_campos"
+		textureFile = "gfx//interface//goals//focus_PUE_continue_with_campos.dds"
+	}
+}

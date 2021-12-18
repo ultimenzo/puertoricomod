@@ -1,0 +1,1283 @@
+focus_tree = {
+	id = puerto_rican_focus
+	initial_show_position = {
+		focus = pue_guidance
+	}
+
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = PUE
+		}
+	}
+	
+	default = no
+
+	# Democratic (Loyalist) Path
+	focus = {
+		id = pue_guidance
+		icon = GFX_focus_chi_mission_to_the_us
+		x = 2
+		y = 0
+		cost = 10
+
+		available = {
+			always = no
+		}
+		mutually_exclusive = {
+			focus = pue_assertiveness
+		}
+
+		completion_reward = {
+			retire_country_leader = yes
+			create_country_leader = {
+				name = "Luis Muñoz Marín"
+				picture = "gfx/leaders/PUE/Portrait_PUE_Luis_Munoz_Marin.dds"
+				expire = "1965.1.1"
+				ideology = liberalism
+				traits = {
+				}
+			}
+
+			set_party_name = {
+				ideology = democratic
+				long_name = PUE_liberal_democratic_party_long
+				name = PUE_liberal_democratic_party
+			}
+		}
+	}
+
+	# Independence Path
+	focus = {
+		id = pue_assertiveness
+		icon = GFX_goal_pue_liberty 
+		x = 7
+		y = 0
+		cost = 10
+		relative_position_id = pue_guidance
+
+		ai_will_do = {
+			base = 100
+		}
+
+		bypass = {
+			is_subject = no
+		}
+
+		mutually_exclusive = {
+			focus = pue_guidance
+		}
+		completion_reward = {
+			custom_effect_tooltip = PUE_can_lead_to_war_with_us
+			USA = {
+				add_opinion_modifier = {
+					target = PREV
+					modifier = PUE_independence_movement
+				}
+
+				set_autonomy = {
+					target = PREV
+					autonomy_state = autonomy_dominion
+				}
+			}
+		}
+	}
+	
+	# Bolster Nationalism
+	focus = {
+		id = pue_bolster_nationalism
+		x = 0 
+		y = 1
+		cost = 10
+		icon = GFX_goal_generic_political_pressure
+		relative_position_id = pue_assertiveness
+		prerequisite = {
+			focus = pue_assertiveness
+		}
+
+		completion_reward = {
+			add_ideas =	pue_nationalism
+		}
+	}
+
+	# Assasinate Winship
+	focus = {
+		id = pue_assasinate_winship
+		x = 0
+		y = 1
+		cost = 10
+		icon = GFX_goal_generic_occupy_start_war
+		relative_position_id = pue_bolster_nationalism
+		prerequisite = {
+			focus = pue_bolster_nationalism
+		}
+
+		bypass = {
+			is_subject = no
+		}
+
+		completion_reward = {
+			kill_country_leader = yes
+			USA = {
+				country_event = pue.1
+			}
+			custom_effect_tooltip = PUE_if_declare_martial_law_tt
+			effect_tooltip = {
+				add_ideas = {
+					pue_martial_law
+				}
+			}
+			
+			custom_effect_tooltip = pue_new_line_tt
+			remove_ideas = {
+				pue_american_government
+			}
+
+			set_party_name = {
+				ideology = democratic
+				long_name = PUE_nationalist_democratic_party_long
+				name = PUE_nationalist_democratic_party
+			}
+			create_country_leader = {
+				name = "Pedro Albizu Campos"
+				picture = "gfx/leaders/PUE/Portrait_PUE_Pedro_Albizu_Campos.dds"
+				expire = "1965.1.1"
+				ideology = conservatism
+				traits = {
+					fascist_sympathies
+				}
+			}
+		}
+	}
+
+	# Plea to Central America
+	focus = {
+		id = pue_plea_to_central_america
+		x = 3
+		y = 1
+		cost = 4
+		relative_position_id = pue_assasinate_winship
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = {
+			focus = pue_assasinate_winship
+		}
+
+		bypass = {
+			is_subject = no
+		}
+		
+		will_lead_to_war_with = USA
+		completion_reward = {
+			custom_effect_tooltip = PUE_pleading
+
+			every_country = {
+				limit = {
+					OR = {
+						TAG = ELS
+						TAG = HON
+						TAG = GUA 
+						TAG = COS
+						TAG = PAN
+						TAG = NIC
+					}
+				}
+
+				add_opinion_modifier = {
+					target = PUE
+					modifier = PUE_sent_envoy
+				}
+
+				set_country_flag = pue_sent_envoy
+			}
+		}
+	}
+
+	# Plea to South America
+	focus = {
+		id = pue_plea_to_south_america
+		x = -1
+		y = 1
+		cost = 3
+		icon = GFX_goal_generic_positive_trade_relations
+		relative_position_id = pue_plea_to_central_america
+		prerequisite = {
+			focus = pue_plea_to_central_america
+		}
+		
+		bypass = {
+			is_subject = no
+		}
+		
+		will_lead_to_war_with = USA
+		completion_reward = {
+			custom_effect_tooltip = PUE_pleading
+			VEN = {
+				add_opinion_modifier = {
+					target = PUE
+					modifier = PUE_sent_envoy
+				}
+
+				set_country_flag = pue_sent_envoy
+			}
+
+			COL = {
+				add_opinion_modifier = {
+					target = PUE
+					modifier = PUE_sent_envoy
+				}
+
+				set_country_flag = pue_sent_envoy
+			}
+		}
+	}
+
+	# Plea to the Caribbean
+	focus = {
+		id = pue_plea_to_caribbean
+		x = 1
+		y = 1
+		cost = 3
+		icon = GFX_goal_generic_positive_trade_relations
+		relative_position_id = pue_plea_to_central_america
+		prerequisite = {
+			focus = pue_plea_to_central_america
+		}
+
+		bypass = {
+			is_subject = no
+		}
+		
+		will_lead_to_war_with = USA
+		completion_reward = {
+			custom_effect_tooltip = PUE_pleading
+			DOM = {
+				add_opinion_modifier = {
+					target = PUE
+					modifier = PUE_sent_envoy
+				}
+				set_country_flag = pue_sent_envoy
+			}
+
+			HAI = {
+				add_opinion_modifier = {
+					target = PUE
+					modifier = PUE_sent_envoy
+				}
+				set_country_flag = pue_sent_envoy
+			}
+
+			CUB = {
+				add_opinion_modifier = {
+					target = PUE
+					modifier = PUE_sent_envoy
+				}
+				set_country_flag = pue_sent_envoy
+			}
+		}
+	}
+	
+	# Prepare for Independence
+	focus = {
+		id = pue_prepare_for_independence
+		x = 1
+		y = 1
+		cost = 10
+		relative_position_id = pue_plea_to_south_america
+		icon = GFX_goal_generic_major_war
+		prerequisite = {
+			focus = pue_plea_to_south_america
+			focus = pue_plea_to_caribbean
+			focus = pue_plea_to_central_america
+		}
+
+		bypass = {
+			is_subject = no
+		}
+
+		available = {
+			NOT = {
+				has_idea = pue_martial_law
+			}
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = PUE_prepare_for_independence_tt
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 3000
+			}
+			
+			hidden_effect = {
+				PUE = {
+					capital_scope = {
+						create_unit = {
+							division = "name = \"1. Brigada de Infanteria\" division_template = \"Brigada de Infanteria\" start_experience_factor = 0.25" 
+							owner = PUE
+						}
+						create_unit = {
+							division = "name = \"2. Brigada de Infanteria\" division_template = \"Brigada de Infanteria\" start_experience_factor = 0.25" 
+							owner = PUE
+						}
+					}
+				
+					808 = {
+						create_unit = {
+							division = "name = \"3. Brigada de Infanteria\" division_template = \"Brigada de Infanteria\" start_experience_factor = 0.25" 
+							owner = PUE
+						}
+					}
+
+					809 = {
+						create_unit = {
+							division = "name = \"4. Brigada de Infanteria\" division_template = \"Brigada de Infanteria\" start_experience_factor = 0.25" 
+							owner = PUE
+						}
+					}
+
+					810 = {
+						create_unit = {
+							division = "name = \"5. Brigada de Infanteria\" division_template = \"Brigada de Infanteria\" start_experience_factor = 0.25" 
+							owner = PUE
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	# Declare Independence
+	focus = {
+		id = pue_declare_independence
+		x = 0
+		y = 4
+		icon = GFX_goal_generic_territory_or_war
+		cost = 10
+		relative_position_id = pue_assasinate_winship
+
+		prerequisite = {
+			focus = pue_assasinate_winship
+		}
+		prerequisite = {
+			focus = pue_prepare_for_independence
+		}
+
+		bypass = {
+			is_subject = no
+		}
+
+		available = {
+			NOT = {
+				has_idea = pue_martial_law
+			}
+		}
+		
+		will_lead_to_war_with = USA
+		completion_reward = {
+			custom_effect_tooltip = PUE_will_unify_cab_against_USA
+			USA = {
+				set_autonomy = {
+					target = PUE
+					autonomous_state = autonomy_free
+				}
+				country_event = pue.5
+			}
+
+			hidden_effect = {
+				remove_ideas = {
+					pue_martial_law
+				}
+			}
+
+			custom_effect_tooltip = pue_new_line_tt
+			set_cosmetic_tag = PUE
+			807 = {
+				set_state_name = "Islas Vírgenes"
+			}
+		}
+	}
+
+	# Stabalizing the Nation
+	focus = {
+		id = pue_national_recovery
+		x = 1
+		y = 1
+		icon = GFX_goal_generic_consumer_goods
+		cost = 10
+		relative_position_id = pue_declare_independence
+
+		mutually_exclusive = {
+			focus = pue_an_alternative
+		}
+		prerequisite = {
+			focus = pue_declare_independence
+		}
+
+		available = {
+			has_war = no
+			NOT = {
+				has_country_flag = pue_backed_down_independence	
+			}
+		}
+		
+		completion_reward = {
+			add_stability = 0.10
+			add_timed_idea = {
+				idea = pue_stabalize_the_nation
+				days = 350
+			}
+		}
+	}
+
+	# Anarchism
+	focus = {
+		id = pue_an_alternative
+		x = -1
+		y = 1
+		icon = GFX_focus_spr_regional_defense_council_of_aragon
+		cost = 10
+		relative_position_id = pue_declare_independence
+
+		prerequisite = {
+			focus = pue_declare_independence
+		}
+
+		mutually_exclusive = {
+			focus = pue_national_recovery
+		}
+
+		available = {
+			has_war = no
+			NOT = {
+				has_country_flag = pue_backed_down_independence	
+			}
+		}
+		
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.15
+			}
+			add_war_support = 0.05
+			add_ideas = {
+				SPR_anarchist_society_1
+			}
+
+			
+
+			set_party_name = {
+				ideology = neutrality
+				long_name = PUE_anarchist_party_long
+				name = PUE_anarchist_party
+			}
+			
+			create_country_leader = {
+				name = "Anarchist Commune"
+				desc = "POLITICS_ANARCHIST_COMMUNE_DESC"
+				picture = "GFX_portrait_SPR_anarchist_commune"
+				expire = "1965.1.1"
+				ideology = anarchism
+				traits = {
+					our_right_to_survive
+				}
+			}
+
+			set_cosmetic_tag = PUE_anarchism
+
+			HIDDEN_EFFECT = {
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+				}
+				news_event = pue_news.7
+			}
+		}
+	}
+
+	# Support Spanish Anarchists
+	focus = {
+		id = pue_support_spanish_anarchism
+		x = -5
+		y = 1
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		cost = 5
+		relative_position_id = pue_an_alternative
+
+		prerequisite = {
+			focus = pue_an_alternative
+		}
+
+		available = {
+			IF = {
+				LIMIT = {
+					OR = {
+						SPR_scw_in_progress = yes
+						NOT = {
+							has_global_flag = scw_over
+						}
+					}
+				}
+
+				OR = {
+					AND = {
+						NOT = {
+							country_exists = SPC
+						}
+	
+						SPR = {
+							has_completed_focus = SPR_regional_defense_council_of_aragon
+						}
+					}
+	
+					country_exists = SPC
+				}
+			}
+		}
+		
+		completion_reward = {
+			set_rule = {
+				can_send_volunteers = yes
+			}
+			
+			add_ideas = {
+				pue_volunteer_forces
+			}
+
+			# If the civil war hasn't fired, just show the anarchits as the receivers
+			IF = {
+				LIMIT = {
+					SPR_scw_in_progress = no
+					NOT = {
+						has_global_flag = scw_over
+					}
+				}
+
+				SPC = {
+					country_event = pue.17
+					add_opinion_modifier = {
+						target = PUE
+						modifier = PUE_supported_us_anarchist_spain
+					}
+	
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_0
+						amount = 1000
+					}
+				}
+			}
+
+			# If SPR is going anarchist, show SPR
+			IF = {
+				LIMIT = {
+					SPR = {
+						has_completed_focus = SPR_regional_defense_council_of_aragon
+					}
+				}
+
+				SPR = {
+					country_event = pue.17
+					add_opinion_modifier = {
+						target = PUE
+						modifier = PUE_supported_us_anarchist_spain
+					}
+	
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_0
+						amount = 1000
+					}
+				}
+			}
+
+			# If the civil war has fired and SPR is going stalinist/republican, use SPC
+			IF = {
+				LIMIT = {
+					NOT = {
+						SPR = {
+							has_completed_focus = SPR_regional_defense_council_of_aragon
+						}
+					}
+
+					AND = {
+						SPR_scw_in_progress = yes
+					}
+				}
+
+				SPC = {
+					country_event = pue.17
+					add_opinion_modifier = {
+						target = PUE
+						modifier = PUE_supported_us_anarchist_spain
+					}
+	
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_0
+						amount = 1000
+					}
+				}
+			}
+		}
+	}
+
+	# Appropriate the Means of Production
+	focus = {
+		id = pue_anarchism_appropriate_the_means_of_production
+		x = -2
+		y = 1
+		icon = GFX_goal_generic_production
+		cost = 5
+		relative_position_id = pue_an_alternative
+		prerequisite = {
+			focus = pue_an_alternative
+		}
+
+
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.03
+			}
+			swap_ideas = {
+				remove_idea = SPR_anarchist_society_1
+				add_idea = SPR_anarchist_society_2
+			}
+		}
+	}
+
+
+	# Autogestion
+	focus = {
+		id = pue_anarchism_autogestion
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_alliance
+		cost = 5
+		relative_position_id = pue_anarchism_appropriate_the_means_of_production
+		prerequisite = {
+			focus = pue_anarchism_appropriate_the_means_of_production
+		}
+
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+			swap_ideas = {
+				remove_idea = SPR_anarchist_society_2
+				add_idea = SPR_anarchist_society_3
+			}
+		}
+	}
+
+	# Collectivization
+	focus = {
+		id = pue_anarchism_collectivization
+		x = -2
+		y = 1
+		icon = GFX_goal_generic_national_unity
+		cost = 5
+		relative_position_id = pue_anarchism_autogestion
+		prerequisite = {
+			focus = pue_anarchism_autogestion
+		}
+		
+		completion_reward = {
+			add_stability = -0.05
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+			if = {
+				limit = {
+					has_idea = SPR_anarchist_society_2
+				}
+				swap_ideas = {
+					remove_idea = SPR_anarchist_society_2
+					add_idea = SPR_anarchist_society_5
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = SPR_anarchist_society_5
+				}
+				swap_ideas = {
+					remove_idea = SPR_anarchist_society_5
+					add_idea = SPR_anarchist_society_8
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = SPR_anarchist_society_3
+				}
+				swap_ideas = {
+					remove_idea = SPR_anarchist_society_3
+					add_idea = SPR_anarchist_society_6
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = SPR_anarchist_society_6
+				}
+				swap_ideas = {
+					remove_idea = SPR_anarchist_society_6
+					add_idea = SPR_anarchist_society_9
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = SPR_anarchist_society_4
+				}
+				swap_ideas = {
+					remove_idea = SPR_anarchist_society_4
+					add_idea = SPR_anarchist_society_7
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = SPR_anarchist_society_7
+				}
+				swap_ideas = {
+					remove_idea = SPR_anarchist_society_7
+					add_idea = SPR_anarchist_society_10
+				}
+			}
+			else = {
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = SPR_anarchist_society_2
+						add_idea = SPR_anarchist_society_5
+					}
+				}
+			}
+		}
+	}
+
+	
+	# Worker Councils
+	focus = {
+		id = pue_anarchism_worker_councils
+		x = 2
+		y = 1
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		cost = 5
+		relative_position_id = pue_anarchism_autogestion
+		prerequisite = {
+			focus = pue_anarchism_autogestion
+		}
+
+		completion_reward = {
+			add_stability = -0.05
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+			if = {
+				limit = {
+					has_idea = SPR_anarchist_society_3
+				}
+				swap_ideas = {
+					remove_idea = SPR_anarchist_society_3
+					add_idea = SPR_anarchist_society_4
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = SPR_anarchist_society_6
+				}
+				swap_ideas = {
+					remove_idea = SPR_anarchist_society_6
+					add_idea = SPR_anarchist_society_7
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = SPR_anarchist_society_9
+				}
+				swap_ideas = {
+					remove_idea = SPR_anarchist_society_9
+					add_idea = SPR_anarchist_society_10
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = SPR_anarchist_society_12
+				}
+				swap_ideas = {
+					remove_idea = SPR_anarchist_society_12
+					add_idea = SPR_anarchist_society_15
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = SPR_anarchist_society_14
+				}
+				swap_ideas = {
+					remove_idea = SPR_anarchist_society_14
+					add_idea = SPR_anarchist_society_16
+				}
+			}
+			else = {
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = SPR_anarchist_society_3
+						add_idea = SPR_anarchist_society_4
+					}
+				}
+			}
+		}
+	}
+		
+	# Equality for Women
+	focus = {
+		id = pue_anarchism_equality_for_women
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_improve_relations
+		cost = 5
+		relative_position_id = pue_anarchism_autogestion
+		prerequisite = {
+			focus = pue_anarchism_autogestion
+		}
+		
+		completion_reward = {
+			add_stability = -0.05
+			add_war_support = 0.10
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+			if = {
+				limit = {
+					has_idea = SPR_anarchist_society_5
+				}
+				swap_ideas = {
+					remove_idea = SPR_anarchist_society_5
+					add_idea = SPR_anarchist_society_11
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = SPR_anarchist_society_8
+				}
+				swap_ideas = {
+					remove_idea = SPR_anarchist_society_8
+					add_idea = SPR_anarchist_society_13
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = SPR_anarchist_society_6
+				}
+				swap_ideas = {
+					remove_idea = SPR_anarchist_society_6
+					add_idea = SPR_anarchist_society_12
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = SPR_anarchist_society_9
+				}
+				swap_ideas = {
+					remove_idea = SPR_anarchist_society_9
+					add_idea = SPR_anarchist_society_14
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = SPR_anarchist_society_7
+				}
+				swap_ideas = {
+					remove_idea = SPR_anarchist_society_7
+					add_idea = SPR_anarchist_society_15
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = SPR_anarchist_society_10
+				}
+				swap_ideas = {
+					remove_idea = SPR_anarchist_society_10
+					add_idea = SPR_anarchist_society_16
+				}
+			}
+			else = {
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = SPR_anarchist_society_5
+						add_idea = SPR_anarchist_society_11
+					}
+				}
+			}
+		}
+	}
+
+	# Collectivized Society
+	focus = {
+		id = pue_anarchism_collectivized_society
+		x = 0
+		y = 1
+		cost = 10
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		relative_position_id = pue_anarchism_equality_for_women
+		prerequisite = {
+			focus = pue_anarchism_equality_for_women
+		}
+		prerequisite = {
+			focus = pue_anarchism_worker_councils
+		}
+		prerequisite = {
+			focus = pue_anarchism_collectivization
+		}
+
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.25
+			}
+
+			add_ideas = SPR_collectivized_society
+			if = {
+				limit = {
+					NOT = {
+						has_idea = volunteer_only
+					}
+				}
+				add_ideas = volunteer_only
+			}
+			if = {
+				limit = {
+					has_idea = SPR_anarchist_society_15
+				}
+				swap_ideas = {
+					remove_idea = SPR_anarchist_society_15
+					add_idea = SPR_anarchist_society_17
+				}
+			}
+			if = {
+				limit = {
+					has_idea = SPR_anarchist_society_16
+				}
+				swap_ideas = {
+					remove_idea = SPR_anarchist_society_16
+					add_idea = SPR_anarchist_society_18
+				}
+			}
+			else = {
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = SPR_anarchist_society_15
+						add_idea = SPR_anarchist_society_17
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = pue_spread_the_revolution
+		x = -1
+		y = 1
+		cost = 10
+		icon = GFX_goal_generic_major_war
+		relative_position_id = pue_anarchism_collectivized_society
+		prerequisite = {
+			focus = pue_anarchism_collectivized_society
+		}
+
+		completion_reward = {
+			unlock_decision_category_tooltip = PUE_anarchist_revolts
+			unlock_decision_category_tooltip = PUE_anarchist_integration
+		}
+	}
+
+	# Revitalize the Economy
+	focus = {
+		id = pue_revitalize_the_economy
+		x = 17
+		y = 0
+		icon = GFX_goal_generic_construction
+		cost = 5
+
+		completion_reward = {
+			# Add a civ and 2 slots to San Juan
+			random_owned_state = {
+				LIMIT = {
+					state = 686
+				}
+
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+
+			# Add a factory and slot to any random mainland state
+			random_owned_state = {
+				LIMIT = {
+					is_core_of = PUE
+					is_in_home_area = yes
+					NOT = {
+						state = 686
+					}
+				}
+
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	# Force the Farmers into Factories
+	focus = {
+		id = pue_force_the_farmers_into_factories
+		x = 0
+		y = 1
+		icon = GFX_focus_generic_industry_1
+		cost = 5
+		relative_position_id = pue_revitalize_the_economy
+		prerequisite = {
+			focus = pue_revitalize_the_economy
+		}
+
+		completion_reward = {
+			add_stability = -0.10
+			swap_ideas = {
+				remove_idea = pue_agrarian_nation
+				add_idea = pue_agrarian_nation_industrial
+			}
+		}
+	}
+
+	# Fund additional industry
+	focus = {
+		id = pue_fund_additional_industry
+		x = 0
+		y = 1
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 5
+		relative_position_id = pue_force_the_farmers_into_factories
+		prerequisite = {
+			focus = pue_force_the_farmers_into_factories
+		}
+		
+		available = {
+			NOT = {
+				has_idea = pue_recent_industrial_funding
+			}
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = pue_recent_industrial_funding
+				days = 70
+			}
+
+			random_owned_controlled_state = {
+				LIMIT = {
+					is_core_of = PUE
+					is_in_home_area = yes
+					NOT = {
+						state = 686
+					}
+				}
+
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	# Fund Infrastructure Projects
+	focus = {
+		id = pue_infastructure_projects
+		x = 2
+		y = 1
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 5
+		relative_position_id = pue_force_the_farmers_into_factories
+		prerequisite = {
+			focus = pue_force_the_farmers_into_factories
+		}
+
+		available = {
+			NOT = {
+				has_idea = pue_recent_industrial_funding
+			}
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = pue_recent_industrial_funding
+				days = 70
+			}
+
+			random_owned_state = {
+				LIMIT = {
+					state = 686
+				}
+
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+			
+			every_owned_state = {
+				LIMIT = {
+					NOT = {
+						state = 686
+					}
+					is_in_home_area = yes
+					is_core_of = PUE
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	# Fund Dockyard Projects
+	focus = {
+		id = pue_dockyard_projects
+		x = -2
+		y = 1
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 5
+		relative_position_id = pue_force_the_farmers_into_factories
+		prerequisite = {
+			focus = pue_force_the_farmers_into_factories
+		}
+
+		available = {
+			NOT = {
+				has_idea = pue_recent_industrial_funding
+			}
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = pue_recent_industrial_funding
+				days = 70
+			}
+
+			every_owned_state = {
+				LIMIT = {
+					state = 686
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	# Industrialize the Nation
+	focus = {
+		id = pue_industrialize_the_nation
+		x = 0
+		y = 2
+		icon = GFX_focus_generic_industry_2
+		cost = 5
+		relative_position_id = pue_force_the_farmers_into_factories
+		prerequisite = {
+			focus = pue_fund_additional_industry
+		}
+
+		prerequisite = {
+			focus = pue_dockyard_projects
+		}
+
+		prerequisite = {
+			focus = pue_infastructure_projects
+		}
+
+		available = {
+			NOT = {
+				has_idea = pue_recent_industrial_funding
+			}
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				add_idea = pue_agrarian_nation_industrial_2
+				remove_idea = pue_agrarian_nation_industrial
+			}
+
+			every_owned_state = {
+				LIMIT = {
+					is_core_of = PUE
+					is_in_home_area = yes
+				}
+
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	# Expand the University of Puerto Rico
+	focus = {
+		id = pue_expand_the_upr
+		x = 0
+		y = 1
+		icon = GFX_focus_research
+		cost = 5
+		relative_position_id = pue_industrialize_the_nation
+		prerequisite = {
+			focus = pue_industrialize_the_nation
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	# Free Education for All
+	focus = {
+		id = pue_free_education_for_all
+		x = 0
+		y = 1
+		icon = GFX_focus_research2
+		cost = 5
+		relative_position_id = pue_expand_the_upr
+		prerequisite = {
+			focus = pue_expand_the_upr
+		}
+
+		available = {
+			num_of_civilian_factories > 30
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	continuous_focus_position = { x = 50 y = 1750 }
+}

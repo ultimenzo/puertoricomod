@@ -1,0 +1,436 @@
+add_namespace = pue
+
+# A March on San Juan (US receives events)
+country_event = {
+	id = pue.1
+	title = pue.1.t
+	desc = pue.1.d
+
+	is_triggered_only = yes
+
+	# It is a lost cause.
+	option = {
+		name = pue.1.a
+		ai_chance = {
+			base = 100
+		}
+
+		effect_tooltip = {
+			USA = {
+				set_autonomy = {
+					target = PUE
+					autonomy_state = autonomy_free
+				}
+			}
+		}
+		PUE = {
+			country_event = pue.2
+		}
+	}
+
+	# Order the local guard to open fire.
+	option = {
+		name = pue.1.b
+		ai_chance = {
+			base = 0
+		}
+		
+		add_war_support = -0.20
+		add_stability = -0.20
+		effect_tooltip = {
+			PUE = {
+				start_civil_war = {
+					ideology = fascism
+					size = 0.5
+				}
+			}
+		}
+
+		PUE = {
+			country_event = pue.3
+		}
+	}
+}
+
+# A March on San Juan (US liberates)
+country_event = {
+	id = pue.2
+	title = pue.2.t
+	desc = pue.2.d
+
+	is_triggered_only = yes
+
+	# After 500 years...
+	option = {
+		name = pue.2.a
+		retire_character = PUE_blanton_winship
+		OVERLORD = {
+			set_autonomy = {
+				target = PUE
+				autonomy_state = autonomy_free
+			}
+		}
+
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.15
+		}
+
+		hidden_effect = {
+			set_cosmetic_tag = PUE
+			set_party_name = {
+				ideology = democratic
+				long_name = PUE_liberal_democratic_party_long
+				name = PUE_liberal_democratic_party
+			}
+		}
+	}
+}
+
+# A March on San Juan (US opens fire)
+country_event = {
+	id = pue.3
+	title = pue.3.t
+	desc = pue.3.d
+
+	is_triggered_only = yes
+
+	# We will do what we must...
+	option = {
+		name = pue.3.a
+		start_civil_war = {
+			ruling_party = fascism
+			ideology = democratic
+			size = 0.5
+			states = all
+			states_filter = {
+				OR = {
+					state = 686
+					state = 839
+				}
+			}
+		}
+
+		division_template = { 
+			name = "Anti-American Division"
+			division_names_group = SPR_INF_01
+			is_locked = no
+			regiments = { 
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 2 y = 0 }
+				infantry = { x = 3 y = 0 }
+
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 1 y = 1 }
+				infantry = { x = 2 y = 1 }
+				infantry = { x = 3 y = 1 }
+
+				infantry = { x = 0 y = 2 }
+				infantry = { x = 1 y = 2 }
+				infantry = { x = 2 y = 2 }
+				infantry = { x = 3 y = 2 }
+			}
+			support = {
+			}
+		}
+
+		838 = {
+			create_unit = { 
+				division = "name = \"1. Anti-American Division\" division_template = \"Anti-American Division\" start_experience_factor = 0.5" 
+				owner = ROOT
+			}
+		}
+
+		837 = {
+			create_unit = { 
+				division = "name = \"2. Anti-American Division\" division_template = \"Anti-American Division\" start_experience_factor = 0.5" 
+				owner = ROOT
+			}
+		}
+		
+		836 = {
+			create_unit = { 
+				division = "name = \"3. Anti-American Division\" division_template = \"Anti-American Division\" start_experience_factor = 0.5" 
+				owner = ROOT
+			}
+			create_unit = { 
+				division = "name = \"4. Anti-American Division\" division_template = \"Anti-American Division\" start_experience_factor = 0.5" 
+				owner = ROOT
+			}
+		}
+
+		add_war_support = 0.20
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.15
+		}
+		hidden_effect = {
+			retire_character = PUE_blanton_winship
+			retire_character = PUE_american_military_junta
+			set_cosmetic_tag = PUE
+			set_party_name = {
+				ideology = democratic
+				long_name = PUE_liberal_democratic_party_long
+				name = PUE_liberal_democratic_party
+			}
+		}
+	}
+}
+
+# Puerto Rico requests a union (DM)
+country_event = {
+	id = pue.4
+	title = pue.4.t
+	desc = pue.4.d
+
+	is_triggered_only = yes
+
+	# This is a great opportunity for us both.
+	option = {
+		name = pue.4.a
+		ai_chance = {
+			base = 100
+		}
+
+		FROM = {
+			country_event = pue.5
+		}
+		effect_tooltip = {
+			FROM = {
+				set_autonomy = {
+					target = PREV
+					autonomy_state = autonomy_personal_union
+				}
+			}
+		}
+	}
+
+	# It is not in our interests.
+	option = {
+		name = pue.4.b
+		ai_chance = {
+			base = 0
+		}
+		
+		FROM = {
+			country_event = pue.6
+		}
+		effect_tooltip = {
+			FROM = {
+				create_wargoal = {
+					target = PREV
+					type = puppet_wargoal_focus
+				}
+			}
+		}
+	}
+}
+
+# Puerto Rico requests a union (DM Accepts)
+country_event = {
+	id = pue.5
+	title = pue.5.t
+	desc = pue.5.d
+
+	is_triggered_only = yes
+
+	# We will grow stronger together!
+	option = {
+		name = pue.5.a
+		ai_chance = {
+			base = 100
+		}
+
+		add_political_power = 50
+		PUE = {
+			set_autonomy = {
+				target = FROM
+				autonomy_state = autonomy_personal_union
+			}
+		}
+	}
+}
+
+
+# Puerto Rico requests a union (DM Rejects)
+country_event = {
+	id = pue.6
+	title = pue.6.t
+	desc = pue.6.d
+
+	is_triggered_only = yes
+
+	# It is a lost cause.
+	option = {
+		name = pue.6.a
+		ai_chance = {
+			base = 100
+		}
+
+		add_war_support = 0.15
+		create_wargoal = {
+			target = FROM
+			type = puppet_wargoal_focus
+		}
+	}
+}
+
+# Puerto Rico wants to purchase Belize
+country_event = {
+	id = pue.7
+	title = pue.7.t
+	desc = pue.7.d
+
+	is_triggered_only = yes
+
+	# Sure
+	option = {
+		name = pue.7.a
+		ai_chance = {
+			base = 100
+		}
+
+		add_timed_idea = {
+			idea = PUE_payment_for_belize
+			days = 140
+		}
+		FROM = {
+			add_timed_idea = {
+				idea = PUE_payment_for_belize_puerto_rico 
+				days = 140
+			}
+			transfer_state = 311
+			country_event = pue.8
+		}
+	}
+
+	option = {
+		name = pue.7.b
+		ai_chance = {
+			base = 0
+		}
+
+		ROOT = {
+			country_event = pue.9
+		}
+	}
+}
+
+# Puerto Rico wants to purchase Belize (Accepted)
+country_event = {
+	id = pue.8
+	title = pue.8.t
+	desc = pue.8.d
+	is_triggered_only = yes
+
+	# Our influence over America grows.
+	option = {
+		name = pue.8.a
+		ai_chance = {
+			base = 100
+		}
+
+		effect_tooltip = {
+			FROM = {	
+				add_timed_idea = {
+					idea = PUE_payment_for_belize
+					days = 140
+				}
+			}
+
+			add_timed_idea = {
+				idea = PUE_payment_for_belize_puerto_rico 
+				days = 140
+			}
+			transfer_state = 311
+		}
+	}
+}
+
+# Puerto Rico wants to purchase Belize (Rejected)
+country_event = {
+	id = pue.9
+	title = pue.9.t
+	desc = pue.9.d
+	is_triggered_only = yes
+
+	# Damm it.
+	option = {
+		name = pue.9.a
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+# Puerto Rico demands our annexation.
+country_event = {
+	id = pue.10
+	title = pue.10.t
+	desc = pue.10.d
+	is_triggered_only = yes
+
+	# Damm it.
+	option = {
+		name = pue.10.a
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+# Puerto Rico demands our annexation (Rejected)
+country_event = {
+	id = pue.11
+	title = pue.11.t
+	desc = pue.11.d
+	is_triggered_only = yes
+
+	immediate = {
+		CUB = {
+			start_civil_war = {
+				ideology = fascism
+				size = 0.5
+				states = { 853 }
+			}
+		}
+	}
+
+	# lol.
+	option = {
+		name = pue.11.a
+		ai_chance = {
+			base = 100
+		}
+
+
+		CUB = {
+			every_enemy_country = {
+				LIMIT = {
+					original_tag = CUB
+				}
+
+				PUE = {
+					set_autonomy = {
+						target = PREV
+						autonomy_state = autonomy_puppet
+						freedom_level = 0.5
+						end_civil_wars = no
+					}
+					
+					add_to_war = {
+						targeted_alliance = PREV
+						enemy = CUB
+						hostility_reason = asked_to_join
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,903 @@
+focus_tree = {
+	id = puerto_rico_tree
+
+	shared_focus = CARIBBEAN_rejoin_the_railways
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = PUE
+		}
+	}
+
+	default = no
+	continuous_focus_position = { x = 20 y = 1000 }
+
+	focus = {
+		id = PUE_political_situation
+		icon = GFX_goal_generic_demand_territory
+		x = 28
+		y = 0
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_political_power = 50
+			custom_effect_tooltip = PUE_tt_warning
+		}
+	}
+
+	###################################
+	#### COMMONWEALTH (HISTORICAL) ####
+	###################################
+	focus = {
+		id = PUE_commonwealth
+		icon = GFX_goal_PUE_form_the_commonwealth
+		prerequisite = { focus = PUE_political_situation }
+		mutually_exclusive = { focus = PUE_assertiveness }
+		relative_position_id = PUE_political_situation
+		x = -5
+		y = 1
+		offset = {
+			x = 5
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = PUE_commonwealth
+			}
+		}
+		available = {
+			is_subject_of = USA
+		}
+		cost = 5
+		allow_branch = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				NOT = { has_completed_focus = PUE_assertiveness }
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+
+	#####################################
+	#### ASSERTIVENESS (ALT-HISTORY) ####
+	#####################################
+	focus = {
+		id = PUE_assertiveness
+		icon = GFX_goal_pue_liberty
+		prerequisite = { focus = PUE_political_situation }
+		mutually_exclusive = { focus = PUE_commonwealth }
+		relative_position_id = PUE_political_situation
+		x = 5
+		y = 1
+		offset = {
+			x = -3
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = PUE_assertiveness
+			}
+		}
+		cost = 5
+		offset = {
+			x = -5
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = SOV_beaten_but_not_defeated
+			}
+		}
+
+		available = {}
+		allow_branch = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				NOT = { has_completed_focus = PUE_commonwealth }
+			}
+		}
+		
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism 
+				popularity = 0.10
+			}
+			unlock_decision_category_tooltip = march_through_puerto_rico
+			remove_ideas = PUE_american_government
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+
+	focus = {
+		id = PUE_march_on_san_juan
+		icon = GFX_focus_spr_the_anti_fascist_workers_revolution
+		prerequisite = { focus = PUE_assertiveness }
+		x = 0
+		y = 1
+		relative_position_id = PUE_assertiveness
+		cost = 5
+
+		available = {
+			fascism > 0.4
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			OVERLORD = {
+				country_event = pue.1
+			}
+		}
+	}
+
+	focus = {
+		id = PUE_the_counter_revolution
+		icon = GFX_goal_support_communism
+		prerequisite = { focus = PUE_march_on_san_juan }
+		mutually_exclusive = { focus = PUE_the_counter_revolution }
+		x = 4
+		y = 1
+		relative_position_id = PUE_march_on_san_juan
+		cost = 5
+
+		available = {
+			fascism > 0.4
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			OVERLORD = {
+				country_event = pue.1
+			}
+		}
+	}
+
+
+
+	#################################
+	#### ASSERTIVENESS (FASCIST) ####
+	#################################
+	focus = {
+		id = PUE_continue_with_campos
+		icon = GFX_goal_PUE_continue_with_campos
+		prerequisite = { focus = PUE_march_on_san_juan }
+		mutually_exclusive = { focus = PUE_the_counter_revolution }
+		x = -4
+		y = 1
+		relative_position_id = PUE_march_on_san_juan
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_trait = {
+				character = PUE_pedro_campos
+				slot = country_leader
+				trait = PUE_emergency_powers
+			}
+		}
+	}
+
+	focus = {
+		id = PUE_unite_with_dominican_republic
+		icon = GFX_goal_PUE_unite_with_dominican_republic
+		prerequisite = { focus = PUE_continue_with_campos }
+		x = 0
+		y = 1
+		relative_position_id = PUE_continue_with_campos
+		cost = 10
+
+		available = {
+			is_subject = no
+		}
+
+		bypass = {
+			OR = {
+				has_war_with = DOM
+				NOT = {
+					country_exists = DOM
+				}
+
+				DOM = {
+					is_subject_of = PUE
+				}
+			}
+		}
+		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			DOM = {
+				country_event = pue.4
+			}
+		}
+	}
+
+	focus = {
+		id = PUE_unite_hispaniola
+		icon = GFX_goal_PUE_occupy_haiti
+		prerequisite = { focus = PUE_unite_with_dominican_republic }
+		x = -1
+		y = 1
+		relative_position_id = PUE_unite_with_dominican_republic
+		cost = 5
+
+		available = {
+			is_subject = no
+			OR = {
+				DOM = {
+					is_subject_of = PUE
+				}
+
+				NOT = {
+					country_exists = DOM
+				}
+			}
+		}
+
+		bypass = {
+			OR = {
+				has_war_with = HAI
+				NOT = {
+					country_exists = HAI
+				}
+
+				HAI = {
+					is_subject_of = PUE
+				}
+			}
+		}
+		
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			create_wargoal = {
+				target = HAI
+				type = puppet_wargoal_focus
+			}
+		}
+	}
+
+	focus = {
+		id = PUE_seize_cuba
+		icon = GFX_goal_PUE_seize_cuba
+		prerequisite = { focus = PUE_unite_with_dominican_republic }
+		x = 1
+		y = 1
+		relative_position_id = PUE_unite_with_dominican_republic
+		cost = 10
+
+		available = {
+			is_subject = no
+		}
+
+		bypass = {
+			OR = {
+				has_war_with = CUB
+				NOT = {
+					country_exists = CUB
+				}
+
+				CUB = {
+					is_subject_of = PUE
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			unlock_decision_category_tooltip = pue_infiltrate_cuba
+			create_wargoal = {
+				target = CUB
+				type = puppet_wargoal_focus
+			}
+		}
+	}
+
+	#####################################
+	#### ASSERTIVENESS (COMMUNIST) ####
+	#####################################
+	focus = {
+		id = PUE_workers_republic
+		icon = GFX_goal_support_communism
+		prerequisite = { focus = PUE_the_counter_revolution }
+		x = 0
+		y = 1
+		relative_position_id = PUE_the_counter_revolution
+		cost = 5
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = PUE_ramon_mirabal
+			add_popularity = {
+				ideology = communism
+				popularity = 0.10
+			}
+
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.25
+			}
+		}
+	}
+
+	#########################################
+	#### ASSERTIVENESS (CARIBBEAN UNION) ####
+	#########################################
+	focus = {
+		id = PUE_caribbean_union
+		icon = GFX_focus_EST_estonia_is_scandinavia
+		prerequisite = {
+			focus = PUE_unite_hispaniola
+			focus = PUE_seize_cuba
+			focus = PUE_workers_republic
+		}
+		prerequisite = {  }
+		x = 0
+		y = 5
+		relative_position_id = PUE_march_on_san_juan
+		cost = 10
+
+		available = {
+			OR = {
+				AND = {
+					has_completed_focus = PUE_unite_hispaniola
+					has_completed_focus = PUE_seize_cuba
+				}
+
+				has_completed_focus = PUE_workers_republic
+			}
+
+			is_subject = no
+			custom_trigger_tooltip = {
+				tooltip = PUE_caribbean_union_tt
+				all_state = {
+					OR = {
+						controls_or_subject_of = yes
+						state = 852
+						NOT = {
+							OR = {
+								is_core_of = DOM
+								is_core_of = HAI
+								is_core_of = CUB
+							}
+						}
+					}
+				}
+			}
+		}
+
+		bypass = {
+			has_global_flag = form_caribbean_flag
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			set_cosmetic_tag = CAB_UNIFIED
+			activate_decision = form_caribbean
+			IF = {
+				LIMIT = {
+					CUB = {
+						is_subject_of = PUE
+					}
+				}
+				annex_country = {
+					target = CUB
+					transfer_troops = yes
+				}
+			}
+			IF = {
+				LIMIT = {
+					DOM = {
+						is_subject_of = PUE
+					}
+				}
+				annex_country = {
+					target = DOM
+					transfer_troops = yes
+				}
+			}
+			IF = {
+				LIMIT = {
+					HAI = {
+						is_subject_of = PUE
+					}
+				}
+				annex_country = {
+					target = HAI
+					transfer_troops = yes
+				}
+			}
+
+			set_rule = {
+				can_create_factions = yes
+			}
+ 
+			# Add unifier trait and if not in faction create. (Fascism)
+			IF = {
+				LIMIT = {
+					has_government = fascism
+				}
+
+				add_trait = {
+					character = "PUE_pedro_campos"
+					slot = country_leader
+					trait = PUE_unifier
+				}
+
+				IF = {
+					LIMIT = {
+						is_in_faction = no
+					}
+					create_faction = "CAB_UNIFIED_faction_fascism"
+				}
+			}
+
+			IF = {
+				LIMIT = {
+					is_in_faction = no
+				}
+
+				IF = {
+					LIMIT = {
+						has_government = communism
+					}
+					create_faction = "CAB_UNIFIED_faction_communism"
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = PUE_reach_out_to_central_america
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = PUE_caribbean_union }
+		mutually_exclusive = { focus = PUE_integrate_central_america }
+		x = -2
+		y = 1
+		relative_position_id = PUE_caribbean_union
+		cost = 5
+
+		available = {
+			is_subject = no
+			is_faction_leader = yes
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			IF = {
+				LIMIT = {
+					country_exists = GUA
+				}
+
+				effect_tooltip = {
+					GUA = {
+						add_opinion_modifier = {
+							target = PREV
+							modifier = CARIBBEAN_alliance
+						}
+						custom_effect_tooltip = invite_to_faction_tt
+					}
+				}
+
+				hidden_effect = {
+					GUA = {
+						add_opinion_modifier = {
+							target = PREV
+							modifier = CARIBBEAN_alliance
+						}
+						country_event = generic.5
+					}
+				}
+			}
+			IF = {
+				LIMIT = {
+					country_exists = HON
+				}
+
+				effect_tooltip = {
+					HON = {
+						add_opinion_modifier = {
+							target = PREV
+							modifier = CARIBBEAN_alliance
+						}
+						custom_effect_tooltip = invite_to_faction_tt
+					}
+				}
+
+				hidden_effect = {
+					HON = {
+						add_opinion_modifier = {
+							target = PREV
+							modifier = CARIBBEAN_alliance
+						}
+						country_event = generic.5
+					}
+				}
+			}
+			IF = {
+				LIMIT = {
+					country_exists = ELS
+				}
+
+				effect_tooltip = {
+					ELS = { 
+						add_opinion_modifier = {
+							target = PREV
+							modifier = CARIBBEAN_alliance
+						}
+						custom_effect_tooltip = invite_to_faction_tt 
+					}
+				}
+
+				hidden_effect = {
+					ELS = {
+						add_opinion_modifier = {
+							target = PREV
+							modifier = CARIBBEAN_alliance
+						}
+						country_event = generic.5
+					}
+				}
+			}
+			IF = {
+				LIMIT = {
+					country_exists = NIC
+				}
+
+				effect_tooltip = {
+					NIC = { 
+						add_opinion_modifier = {
+							target = PREV
+							modifier = CARIBBEAN_alliance
+						}
+						custom_effect_tooltip = invite_to_faction_tt 
+					}
+				}
+
+				hidden_effect = {
+					NIC = {
+						add_opinion_modifier = {
+							target = PREV
+							modifier = CARIBBEAN_alliance
+						}
+						country_event = generic.5
+					}
+				}
+			}
+			IF = {
+				LIMIT = {
+					country_exists = COS
+				}
+
+				effect_tooltip = {
+					COS = { 
+						add_opinion_modifier = {
+							target = PREV
+							modifier = CARIBBEAN_alliance
+						}
+						custom_effect_tooltip = invite_to_faction_tt 
+					}
+
+				}
+
+				hidden_effect = {
+					COS = {
+						add_opinion_modifier = {
+							target = PREV
+							modifier = CARIBBEAN_alliance
+						}
+						country_event = generic.5
+					}
+				}
+			}
+			IF = {
+				LIMIT = {
+					country_exists = PAN
+				}
+
+				effect_tooltip = {
+					PAN = { 
+						add_opinion_modifier = {
+							target = PREV
+							modifier = CARIBBEAN_alliance
+						}
+						custom_effect_tooltip = invite_to_faction_tt 
+					}
+				}
+
+				hidden_effect = {
+					PAN = {
+						add_opinion_modifier = {
+							target = PREV
+							modifier = CARIBBEAN_alliance
+						}
+						country_event = generic.5
+					}
+				}
+			}
+		}
+		
+	}
+
+	focus = {
+		id = PUE_integrate_central_america
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = PUE_caribbean_union }
+		mutually_exclusive = { focus = PUE_reach_out_to_central_america }
+		x = 2
+		y = 1
+		relative_position_id = PUE_caribbean_union
+		cost = 10
+
+		available = {
+			is_subject = no
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			every_country = {
+				LIMIT = {
+					OR = {
+						original_tag = GUA
+						original_tag = HON
+						original_tag = ELS
+						original_tag = NIC
+						original_tag = COS
+						original_tag = PAN
+					}
+
+					country_exists = THIS
+				}
+				
+				ROOT = {
+					create_wargoal = {
+						target = PREV
+						type = puppet_wargoal_focus
+					}
+				}
+			}
+			every_state = {
+				LIMIT = {
+					OR = {
+						is_core_of = GUA
+						is_core_of = HON
+						is_core_of = ELS
+						is_core_of = NIC
+						is_core_of = COS
+						is_core_of = PAN
+					}
+				}
+
+				add_claim_by = ROOT
+			}
+
+			custom_effect_tooltip = PUE_integrate_central_america_tooltip
+		}
+	}
+
+	focus = {
+		id = PUE_purchase_belize
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = PUE_integrate_central_america }
+		x = 2
+		y = 1
+		relative_position_id = PUE_integrate_central_america
+		cost = 5
+
+		available = {
+			is_subject = no
+		}
+
+		bypass = {
+			controls_state = 311
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			311 = {
+				add_core_of = PUE
+				CONTROLLER = {
+					country_event = pue.7
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = PUE_reach_out_to_south_america
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { 
+			focus = PUE_reach_out_to_central_america
+			focus = PUE_integrate_central_america	
+	 	}
+		mutually_exclusive = { focus = PUE_integrate_south_america }
+		x = 0
+		y = 1
+		relative_position_id = PUE_reach_out_to_central_america
+		cost = 5
+
+		available = {
+			is_subject = no
+			is_faction_leader = yes
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			IF = {
+				LIMIT = {
+					country_exists = COL
+				}
+
+				effect_tooltip = {
+					COL = {
+						add_opinion_modifier = {
+							target = PREV
+							modifier = CARIBBEAN_alliance
+						}
+						custom_effect_tooltip = invite_to_faction_tt
+					}
+				}
+
+				hidden_effect = {
+					COL = {
+						country_event = generic.5
+						add_opinion_modifier = {
+							target = PREV
+							modifier = CARIBBEAN_alliance
+						}
+					}
+				}
+			}
+			IF = {
+				LIMIT = {
+					country_exists = VEN
+				}
+
+				effect_tooltip = {
+					VEN = { 
+						add_opinion_modifier = {
+							target = PREV
+							modifier = CARIBBEAN_alliance
+						}
+						custom_effect_tooltip = invite_to_faction_tt 
+					}
+				}
+
+				hidden_effect = {
+					add_opinion_modifier = {
+						target = PREV
+						modifier = CARIBBEAN_alliance
+					}
+					VEN = {
+						country_event = generic.5
+					}
+				}
+			}
+		}
+		
+	}
+
+	focus = {
+		id = PUE_integrate_south_america
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { 
+			focus = PUE_integrate_central_america 
+			focus = PUE_reach_out_to_central_america
+		}
+		mutually_exclusive = { focus = PUE_reach_out_to_south_america }
+		x = 0
+		y = 1
+		relative_position_id = PUE_integrate_central_america
+		cost = 10
+
+		available = {
+			is_subject = no
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			custom_effect_tooltip = PUE_integrate_south_america_tooltip
+			every_country = {
+				LIMIT = {
+					OR = {
+						original_tag = GYA
+						original_tag = VEN
+						original_tag = COL
+					}
+
+					country_exists = THIS
+				}
+		
+				ROOT = {
+					create_wargoal = {
+						target = PREV
+						type = puppet_wargoal_focus
+					}
+				}
+			}
+			every_state = {
+				LIMIT = {
+					OR = {
+						is_core_of = GYA
+						is_core_of = VEN
+						is_core_of = COL
+					}
+				}
+
+				add_claim_by = ROOT
+			}
+		}
+	}
+
+	focus = {
+		id = PUE_caribbean_supremacy
+		icon = GFX_focus_BUL_restore_the_bulgarian_patriarchate
+		prerequisite = {  
+			focus = PUE_integrate_south_america
+		}
+		x = 3
+		y = 1
+		relative_position_id = PUE_reach_out_to_south_america
+		cost = 10
+
+		available = {
+			is_subject = no
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = PUE_caribbean_supremacy
+		}
+	}
+
+	focus = {
+		id = PUE_university_of_the_caribbean
+		icon = GFX_focus_research2
+		prerequisite = { 
+			focus = PUE_integrate_south_america 
+			focus = PUE_reach_out_to_south_america
+		}
+		x = 1
+		y = 1
+		relative_position_id = PUE_reach_out_to_south_america
+		cost = 10
+
+		available = {
+			is_subject = no
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+}

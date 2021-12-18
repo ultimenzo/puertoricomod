@@ -1,0 +1,29 @@
+defined_text = { # Country
+	name = GetNaturaResource_CAB
+	text = {
+		trigger = {
+			tag = CUB
+		}
+		localization_key = PRODUCTION_MATERIALS_CHROMIUM
+	}
+	text = {
+		trigger = {
+			tag = PUE
+		}
+		localization_key = PRODUCTION_MATERIALS_OIL
+	}
+
+	text = {
+		trigger = {
+			tag = DOM
+		}
+		localization_key = PRODUCTION_MATERIALS_CHROMIUM
+	}
+
+	text = {
+		trigger = {
+			tag = HAI
+		}
+		localization_key = PRODUCTION_MATERIALS_OIL
+	}
+}

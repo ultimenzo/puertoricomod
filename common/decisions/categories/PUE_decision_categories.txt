@@ -1,0 +1,60 @@
+march_through_puerto_rico = {
+    icon = GFX_decision_category_eng_move_to_secure_the_dominions
+    allowed = {
+        original_tag = PUE
+    }
+
+    visible = {
+        has_completed_focus = PUE_assertiveness
+        has_country_leader = {
+            character = PUE_blanton_winship
+            ruling_only = yes
+        }
+    }
+
+    on_map_area = {
+        name = march_through_puerto_rico
+        zoom = 150
+    }
+
+    priority = 10
+}
+
+form_caribbean_category = {
+	icon = generic_formable_nations
+	picture = GFX_decision_cat_generic_united_central_america
+
+    allowed = {
+        OR = {
+            original_tag = PUE
+            original_tag = DOM
+            original_tag = HAI
+            original_tag = CUB
+        }
+    }
+
+    visible = {
+        NOT = {
+            has_global_flag = form_caribbean_flag
+        }
+    }
+
+    on_map_area = {
+        targets = { 308 315 318 319 686 689 692 694 835 836 837 838 839 840 841 842 843 844 845 846 847 848 849 850 851 852 853 854 855 691 695 690 693 }
+        name = caribbean_all_possible_cores_states
+        zoom = 150
+    }
+
+    priority = 20
+}
+
+pue_infiltrate_cuba = {
+    icon = GFX_decision_category_eng_move_to_secure_the_dominions
+    allowed = {
+        original_tag = PUE
+    }
+
+    visible = {
+        has_completed_focus = PUE_seize_cuba
+    }
+}

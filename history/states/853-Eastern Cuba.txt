@@ -1,0 +1,39 @@
+state={
+	id=853
+	name="STATE_853"
+	provinces={
+		1550 7590 12347 13280 13281 13282 13283 13284 13285 
+	}
+
+	resources={
+		steel=32.000
+		chromium=15
+	}
+
+	history={
+		owner = CUB
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 1
+			air_base = 2
+			1550 = {
+				naval_base = 1
+
+			}
+
+		}
+		add_core_of = CUB
+		victory_points = {
+			1550 3 
+		}
+
+		victory_points = {
+			12347 3 
+		}
+	}
+	
+	state_category=city
+	manpower=324713
+	buildings_max_level_factor=1.000
+}

@@ -1,0 +1,197 @@
+﻿l_english:
+  #########################
+  ### Political Focuses ###
+  #########################
+  PUE_political_situation:0 "Examine the Political Situation"
+  PUE_political_situation_desc:0 "There are multiple problems currently ongoing in our island. We must examine our problems and decide our future."
+
+  ###################################
+  ### Assertiveness (AHistorical) ###
+  ###################################
+  PUE_assertiveness:0 "Assertiveness"
+  PUE_assertiveness_desc:0 "We have been a colony for the past 500 years, it is time to rid ourselves of foreign rule. No one will do it for us, we must rise up and crush these occupiers."
+  PUE_march_on_san_juan:0 "March on San Juan"
+  PUE_march_on_san_juan_desc:0 "We and the people are ready to finally march on San Juan and rid ourselves of our chains."
+
+  PUE_tt_warning:0 "§YAll major mutually exclusive political focuses will be hidden when taking the other path.§!"
+
+  ### Would include this in the Communist focus side of things but it also branches off to anarchism so ###
+  PUE_the_counter_revolution:0 "The Counter-Revolution"
+  #############################
+  ### Fascist (AHistorical) ###
+  #############################
+  PUE_continue_with_campos:0 "Continue with Campos"
+  PUE_continue_with_campos_desc:0 "Campos' party pushed and realized the March on San Juan. He is clearly the person fit to lead Puerto Rico into a new age."
+  PUE_unite_with_dominican_republic:0 "Form a Union with the Dominican Republic"
+  PUE_unite_with_dominican_republic_desc:0 "We are not the only fascist country in the Caribbean, as we are both small, we should try and form a union with each other to strenghten our position."
+  PUE_unite_hispaniola:0 "Ocuppy Haiti"
+  PUE_unite_hispaniola_desc:0 "We already control half of the island of Hispaniola, it is time to consolidate our power."
+  PUE_seize_cuba:0 "Demand Cuban Annexation"
+  PUE_seize_cuba_desc:0 "Cuba is the largest island in the Caribbean, if we wish to become an unchallenged power in the Caribbean we must bring them under our rule."
+
+  ###############################
+  ### Communist (AHistorical) ###
+  ###############################
+
+  PUE_workers_republic:0 "Join the Comintern"
+  PUE_workers_republic_desc:0 "We're original. Let's be unique and keep our originality by joining the comintern in our communist path."
+  PUE_liberate_the_caribbean:0 "Liberate the Workers of the Caribbean"
+  PUE_liberate_the_caribbean_desc:0 "Do I really need to make a description for a focus that almost nobody will take?"
+
+
+  ###################################
+  ### Shared Branch (AHistorical) ###
+  ###################################
+  PUE_caribbean_union:0 "Form a Caribbean Union"
+  PUE_caribbean_union_desc:0 "Now that the major Antilles have fallen under our control, we should quickly form a new government to represent the unity of our nation."
+  PUE_caribbean_union_tt:0 "Control or have a subject control all §YHaitian§!, §YDominican§! and §YCuban§! states excluding §YGuantanamo Bay§!."
+
+  PUE_reach_out_to_central_america:0 "Reach out to Central America"
+  PUE_reach_out_to_central_america_desc:0 "With a mutual defense agreement with Central America cooperation within the Caribbean region may increase."
+
+  PUE_integrate_central_america_tooltip:0 "Unlocks Decision: §YIntegrate Central America§!\nWhich will allow us to integrate all core states from the following countries: §YGuatemala§!, §YHonduras§!, §YEl Salvador§!, §YNicaragua§!, §YCosta Rica§! and §YPanama§!."
+  PUE_integrate_central_america:0 "Integrate Central America"
+  PUE_integrate_central_america_desc:0 "While our claim to Central America is weak with enough propaganda we could convince the population to accept rule from us."
+
+  PUE_purchase_belize:0 "Purchase Belize"
+  PUE_purchase_belize_desc:0 "Now that we have adopted our foreign policy towards the South American states, it is time to find a staging ground ofr this, connveniently, Belize is the perfect place for this. Let us buy it."
+
+  PUE_reach_out_to_south_america:0 "Reach out to South America"
+  PUE_reach_out_to_south_america_desc:0 "With a mutual defense agreement with South America cooperation within the Caribbean region may increase."
+
+  PUE_integrate_south_america:0 "Integrate South America"
+  PUE_integrate_south_america_desc:0 "While our claim to South America is weak, they are rich in oil, industry and land which could help us very much in the future. With enough propaganda we could convince the population to accept rule from us."
+  PUE_integrate_south_america_tooltip:0 "Unlocks Decision: §YIntegrate South America§!\nWhich will allow us to integrate all core states from the following countries: §YColombia§!, §YVenezuela§! and §YBritish Guyana§!."
+
+  PUE_university_of_the_caribbean:0 "University of the Caribbean"
+  PUE_university_of_the_caribbean_desc:0 "Now that we have brought all of the Caribbean under our rule and influence, let us create a University that will do research in all parts of our beautiful region."
+
+  PUE_caribbean_supremacy:0 "Caribbean Supremacy"
+  PUE_caribbean_supremacy_desc:0 "We used to be a place filled with oppresors left and right, colonizers stealing our gold and killing our people, now it is our time to rise."
+
+  #################################
+  ### Commonwealth (Historical) ###
+  #################################
+  PUE_commonwealth:0 "Form the Commonwealth"
+  PUE_commonwealth_desc:0 "Although some people believe that we should become independent, it is better for our economy and politics if we stay under the guise of the Untied States. Let us form our Commmonwealth and elect our first Puerto Rican governor."
+
+  #################################
+  ### Generic Focuses Caribbean ###
+  #################################
+
+  ### Industrial Focuses ###
+  CARIBBEAN_rejoin_the_railways:0 "Rejoin the Railways"
+  CARIBBEAN_rejoin_the_railways_desc:0 "The Russians and the Germans who occupied us have seen us as nothing more than a rural backwater, but no more. [ROOT.GetNonIdeologyName] shall be industrialized to its maximum potential starting with an upgrade of our railways and infrastructure."
+  CARIBBEAN_axis_investments:2 "Seek [GetBalticAxisInvesmentsAdj] Investments"
+  CARIBBEAN_axis_investments_desc:2 "Fascism has a strong presence around the world, and although there's some understandable reservations, it is undeniable that Fascist trade and investments would strengthen the [ROOT.GetNonIdeologyAdjective] economy immeasurably."
+  CARIBBEAN_german_war_economics:1 "Adopt [GetBalticAxisInvesmentsAdj] War Economics"
+  CARIBBEAN_german_war_economics_desc:1 "[GetGermanWarEconomicsDesc]"
+  CARIBBEAN_german_war_economics_desc_default:0 "The Germans are in the process of a rapid military industrialization the likes of which Europe has seen few times before and we would do well to emulate them and seek investment from the Reichsbank."
+  CARIBBEAN_german_war_economics_desc_alt:0 "Our fascist benefactors are in the process of a rapid military industrialization the likes of which we've seen few times before and we   would do well to emulate them and seek investment from them."
+  CARIBBEAN_autobahn:0 "[Root.GetAdjective] Autobahn"
+  CARIBBEAN_autobahn_desc:0 "It matters little how well industrialized [Root.GetNonIdeologyName] is if her infrastructure does not facilitate a rapid and continuous influx of labour. By modelling our infrastructure sector after that of the Reich, we may achieve the efficiency they have."
+  CARIBBEAN_german_tank_licences:2 "[GetBalticAxisInvesmentsAdj] Tank Licences"
+  CARIBBEAN_german_tank_licences_desc:1 "[GetGermanTankLicencesDesc]"
+  CARIBBEAN_german_tank_licences_desc_default:0 "German tanks have proven themselves capable of leaving their enemies scattered and confused as they blitz through their target. [Root.GetNonIdeologyName] would benefit greatly by emulating these tactics in the oncoming wars to the East."
+  CARIBBEAN_german_tank_licences_desc_alt:0 "The tanks of our fascist benefactors have proven themselves capable of leaving their enemies scattered and confused as they blitz through their target. [Root.GetNonIdeologyName] would benefit greatly by emulating these tactics in the oncoming wars to the East."
+  CARIBBEAN_german_CARIBBEAN_industry:1 "Axis-Caribbean Industry"
+  CARIBBEAN_german_CARIBBEAN_industry_desc:1 "[GetGermanBalticIndustryDesc]"
+  CARIBBEAN_german_CARIBBEAN_industry_desc_default:0 "Our nation now is rich in German investment. The private sectors of Germany and [Root.GetNonIdeologyName] are almost indistinguishable, with many of the same corporations providing work to [Root.GetNonIdeologyAdjective]s and Germans alike."
+  CARIBBEAN_german_CARIBBEAN_industry_desc_alt:0 "Our nation now is rich in foreign fascist investment. The private sectors of other our fascist benefactors and [Root.GetNonIdeologyName] are almost indistinguishable, with many of the same corporations providing work to [Root.GetNonIdeologyAdjective]s and their people alike."
+  CARIBBEAN_request_german_support:2 "Request [GetBalticAxisInvesmentsAdj] Support"
+  CARIBBEAN_request_german_support_desc:1 "[GetRequestGermanSupportDesc]"
+  CARIBBEAN_request_german_support_desc_default:0 "We lack the industrial capacity of Germany, but perhaps we may be able to convince German officials to grant us some extra stockpiled equipment to better defend ourselves against the oncoming Communist threat to the East."
+  CARIBBEAN_request_german_support_desc_alt:0 "We lack the industrial capacity of our fascist benefactors, but perhaps we may be able to convince their officials to grant us some extra stockpiled equipment to better defend ourselves against the oncoming Communist threat to the East."
+  CARIBBEAN_renew_allied_trade:1 "[GetBalticRenewAlliedTradeTitle]"
+  CARIBBEAN_renew_allied_trade_default:0 "Renew Allied Trade"
+  CARIBBEAN_renew_allied_trade_alt:0 "Seek Foreign Investments"
+  CARIBBEAN_renew_allied_trade_desc:1 "[GetBalticRenewAlliedTradeDesc]"
+  CARIBBEAN_renew_allied_trade_desc_default:0 "We have been reliant on British trade and military support since the inception of our state and it would be foolhardy of us to abandon that now. We must attract allied investments to our nation if we are to once again survive the onslaught of the Germans and Russians encroaching on our borders."
+  CARIBBEAN_renew_allied_trade_desc_allied:0 "We have been reliant on the Allies for trade and military support since the inception of our state and it would be foolhardy of us to abandon that now. We must attract Allied investments to our nation if we are to once again survive the onslaught of the Germans and Russians encroaching on our borders."
+  CARIBBEAN_renew_allied_trade_desc_international:0 "We have been reliant on other nations for trade and military support since the inception of our state and it would be foolhardy of us to abandon that now. We must attract foreign investments to our nation if we are to once again survive the onslaught of the Germans and Russians encroaching on our borders."
+  CARIBBEAN_ford_motors:0 "[Root.Capital.GetName] Ford Industry"
+  CARIBBEAN_ford_motors_desc:0 "Ford motor company have done a fine job of providing mass-produced affordable motor vehicles to the Americans and other Allied nations throughout the world. If we should establish a Ford manufactory in [Root.Capital.GetName], we will be able to both provide vehicles for our own army and make a tidy profit exporting them to the West."
+  CARIBBEAN_crossley_motors:0 "[Root.Capital.GetName]-Crossley Motors"
+  CARIBBEAN_crossley_motors_desc:1 "With foreign investment now rife within our nation and production of automobiles in reasonable efficiency, we may be able to collaborate with the Crossley Motor Company to create original designs for use within the [Root.GetNonIdeologyAdjective] army!"
+  CARIBBEAN_british_designers:0 "Invite British Designers"
+  CARIBBEAN_british_designers_desc:0 "We have studied British designs thoroughly, and with [Root.Capital.GetName]-Crossley Motors proving to be a successful endeavour, we would do well to extend formal invitations for British designers to join the [Root.GetNonIdeologyAdjective] Engineering Company."
+  CARIBBEAN_technology_sharing:0 "Technology Sharing"
+  CARIBBEAN_technology_sharing_desc:0 "We produce many of our partner’s equipment already, but perhaps by studying their designs we shall be able to significantly improve native [Root.GetNonIdeologyAdjective] designs."
+  CARIBBEAN_british_aircraft:1 "[GetBritAircraftManufTitle]"
+  CARIBBEAN_british_aircraft_default:0 "British Aircraft Manufacturing"
+  CARIBBEAN_british_aircraft_alt:0 "Foreign Aircraft Manufacturing"
+  CARIBBEAN_british_aircraft_desc:1 "[GetBritAircraftManufDesc]"
+  CARIBBEAN_british_aircraft_desc_default:0 "Efforts at domestic aviation designs have been lukewarm at best thus far. So far the airforce has relied on aircrafts seized from American and British forces, but we must begin domestic production of aircraft if we are to survive and the British airforce may be the key to attaining victory…"
+  CARIBBEAN_british_aircraft_desc_alt:0 "Efforts at domestic aviation designs have been lukewarm at best thus far. So far the airforce has relied on aircrafts seized from American and Allied forces, but we must begin domestic production of aircraft if we are to survive and help from a foreign airforce may be the key to attaining victory…"
+  CARIBBEAN_allied_shipments:0 "Increase Allied Shipments"
+  CARIBBEAN_allied_shipments_desc:1 "[Root.GetNonIdeologyName] has always been a small nation, while isolated from the world we are still incredibly weak and subject to influence from other nations, if we can convince the allies to increase their shipment of guns, we may stay independent for decades to come."
+  CARIBBEAN_CARIBBEAN_fleet:0 "The Caribbean Fleet"
+  CARIBBEAN_CARIBBEAN_fleet_desc:0 "While the [Root.GetNonIdeologyAdjective] fleet is scarcely the envy of the world, with proper investment it may yet prove to be able to defend [Root.GetNonIdeologyName] from any attempted invasions on the sea."
+  CARIBBEAN_attract_workers_to_capital:0 "Attract Workers to [Root.Capital.GetName]"
+  CARIBBEAN_attract_workers_to_capital_desc:0 "The workers of [Root.GetNonIdeologyName] are spread disparately across the countryside, often working in the outdated agricultural sector. If we want to industrialize our nation for war, we must attract workers to the factories of [Root.Capital.GetName]!"
+  CARIBBEAN_rebuild_forts:0 "Build the [Root.Capital.GetName] Forts"
+  CARIBBEAN_rebuild_forts_desc:0 "To protect our nation from any future invasions, we must fortify the first target for any invasion."
+  CARIBBEAN_arm_the_nation:0 "Arm the Nation"
+  CARIBBEAN_arm_the_nation_desc:0 "All across [Root.GetNonIdeologyName] there are men ready to defend against a colonial invasion but lack the equipment to do so. We must ready our arms industry for the rapid production of infantry equipment."
+  CARIBBEAN_unchain_education:0 "Unchain Our Education"
+  CARIBBEAN_unchain_education_desc:0 "The [Root.GetNonIdeologyAdjective] educational system has long been restricted by our disparate population centres, but now with rural folk moving closer to the cities, we shall be more capable of efficiently educating the [Root.GetNonIdeologyAdjective] youth."
+  CARIBBEAN_defence_of_our_nation:0 "The Defence of Our Nation"
+  CARIBBEAN_defence_of_our_nation_desc:0 "Civilian industry is of equal importance to our defence as the arms industry. The steady hum of machinery will drone throughout all of [Root.GetNonIdeologyName] as its patriotic people do their duty to industrialize our nation."
+  CARIBBEAN_modernize_industry:0 "Modernize Our Industry"
+  CARIBBEAN_modernize_industry_desc:0 "For too long, [Root.GetNonIdeologyName]’s output has been defined by agriculture but no more. We must concentrate our industry around the major city centers in each state if we are to turn [Root.GetNonIdeologyName] into a modern economy."
+  CARIBBEAN_domestic_motors:0 "A Domestic Motor Company"
+  CARIBBEAN_domestic_motors_desc:0 "Foreign designs are fine, but we cannot rely on them in perpetuity. [Root.GetNonIdeologyName] is a proud nation, and we must show the world that our designers and thinkers are just as adequate as those from the West."
+  CARIBBEAN_school_of_aviation:1 "Caribbean School of Aviation"
+  CARIBBEAN_school_of_aviation_tech_bonus:0 "School of Aviation"
+  CARIBBEAN_school_of_aviation_desc:0 "It is time to develop our own School of Aviation to shine across the Caribbean so we may defend ourselves from any invasion."
+  CARIBBEAN_original_designs:0 "Original Designs"
+  CARIBBEAN_original_designs_desc:0 "From our nation’s birth in 1918 to the present day, [Root.GetNonIdeologyName] has equipped its armies with arms from the Brits, but no more. We cannot rely on the Brits any longer, we must look forward and begin manufacturing weaponry of [Root.GetNonIdeologyAdjective] origin."
+  CARIBBEAN_arms_industry:0 "Complete the Armament"
+  CARIBBEAN_arms_industry_desc:0 "Now that the modernization of our industry is complete and we have countless domestic military industrial organizations operating within our country, the [Root.GetAdjective] arms industry may finally live up to its true potential!"
+  CARIBBEAN_natural_resources:0 "Develop Natural Resources"
+  CARIBBEAN_natural_resources_desc:0 "[Root.GetNaturaResource_CAB] has made our country rich from trade with the Axis, Allies, and our fellow Caribbean states alike and we would do well to invest more into this industry by investing in [Root.GetExtraction_CAB] across the nation!"
+  CARIBBEAN_trade_with_neighbors:0 "Trade with the Neighbors"
+  CARIBBEAN_trade_with_neighbors_desc:0 "Each time we invest trade into the Americans, the Soviets or their Allies, we are contributing to our own doom. We cannot allow enemy troops to invade [Root.GetNonIdeologyName] with Puerto Rican grain in their rations and Dominican oil in their tanks made from Cuban chromium. We must instead aid each other to be able to defend ourselves from any threat."
+  CARIBBEAN_invest_in_CARIBBEAN_trade:0 "Invest in Caribbean Trade"
+  CARIBBEAN_invest_in_CARIBBEAN_trade_desc:0 "The Caribbean Sea is rich with trade from Central America, South America, and the United States and our ports can scarcely contain them all. We must open up new trade lines with our friends who share this sea with us for a brighter and more prosperous [Root.GetNonIdeologyName]!"
+
+  ### Political Focuses ###
+  CAB_political_effort:0 "Political Effort"
+  CAB_political_effort_desc:0 "To bring about change in the world, we need to be able to bring about change in our own country. Strengthening our political position should come first."
+  CAB_collectivist_ethos:0 "Collectivist Ethos"
+  CAB_collectivist_ethos_desc:0 "Our enemies may divide and conquer lesser nations, but our people will stand united. All for one and one for all."
+  CAB_liberty_ethos:0 "Liberty Ethos"
+  CAB_liberty_ethos_desc:0 "In this time of ideological fanatics who seek to suffocate the human spirit, we will safeguard individual liberties and freedom."
+  CAB_militarism:0 "Militarism"
+  CAB_militarism_desc:0 "Those who view the military as a necessary evil are doomed to hesitate in the face of war. We will ingrain militarism into our culture to become a people of soldiers."
+  CAB_political_correctness:0 "Political Correctness"
+  CAB_political_correctness_desc:0 "People holding mildly controversial or otherwise embarrassing opinions appear to be concerned that there is a wide-reaching conspiracy against them. This seems like an excellent idea."
+  CAB_neutrality_focus:0 "Neutrality Focus"
+  CAB_neutrality_focus_desc:0 "While others may claim it takes bravery and wisdom to take sides in a global conflict, we know it takes more to refuse."
+  CAB_interventionism_focus:0 "Interventionism Focus"
+  CAB_interventionism_focus_desc:0 "We value the freedom of all people, not only our own citizens. If preventing tyranny means war, then so be it."
+  CAB_military_youth:0 "Military Youth"
+  CAB_military_youth_desc:0 "Organizations to promote discipline and political education of young people in our nation will foster loyalty and self-sacrifice early."
+  CAB_deterrence:0 "Deterrence"
+  CAB_deterrence_desc:0 "Standing alone, we rarely benefit from war. Fortunately, we know that the best defense is one so well-known you never have to put it to use."
+  CAB_volunteer_corps:0 "Volunteer Corps"
+  CAB_volunteer_corps_desc:0 "Forcing our people to die for ideals of freedom would be an exercise in irony, but establishing means for those who wish to aid people abroad is not."
+  CAB_paramilitarism:0 "Paramilitarism"
+  CAB_paramilitarism_desc:0 "Military principles have applications outside of the military. With the development of semi-militarized units to complement our armed forces, more people will have military training."
+  CAB_indoctrination_focus:0 "Indoctrination"
+  CAB_indoctrination_focus_desc:0 "Having established our ideology as based on the truth, it may be taught as truth. Education and media must reflect this lesson."
+  CAB_foreign_expeditions:0 "Foreign Expeditions"
+  CAB_foreign_expeditions_desc:0 "With our enemies prepared to intervene in distant conflicts on behalf of their ideals, we must be ready to do the same for ours."
+  CAB_why_we_fight:0 "Why We Fight"
+  CAB_why_we_fight_effect:0 "If we don't have the §YNeutral Foreign Policy§! spirit we will be able to create factions.\n"
+  CAB_why_we_fight_desc:0 "The world is growing increasingly unsafe. Our people need to see the atrocities being committed by those who crave power. It is time we rally the people to our cause and ensure everyone is ready to fight for our freedom."
+  CAB_political_commissars:0 "Political Commissars"
+  CAB_political_commissars_desc:0 "To ensure that our policies are followed in military practice, we will introduce politically appointed officials into military ranks."
+  CAB_internationalism_focus:0 "Internationalism Focus"
+  CAB_internationalism_focus_desc:0 "Ideology knows no borders. Another nation may call itself sovereign, but our convictions are above such claims."
+  CAB_nationalism_focus:0 "Nationalism Focus"
+  CAB_nationalism_focus_desc:0 "Our nation is unique, and our political achievements could only have happened here. We must fight for it at any cost."
+  CAB_ideological_fanaticism:0 "Ideological Fanaticism"
+  CAB_ideological_fanaticism_desc:0 "Our politically established values and goals are worth dying for as much as any ancient faith. Any follower should be prepared to face death, and those who stray better be prepared to face death."
+  CAB_technology_sharing:0 "Technology Sharing"
+  CAB_technology_sharing_desc:0 "By sharing technological advances with our allies, our whole faction will be able to conduct wartime R&D more efficiently."

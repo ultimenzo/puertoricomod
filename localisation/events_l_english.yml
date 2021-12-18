@@ -1,0 +1,39 @@
+﻿l_english:
+  pue.1.t:0 "A March on San Juan"
+  pue.1.d:0 "The local governor in the [FROM.GetName] has reported a march by nationalists in the island demanding their independence. The people marching on the capitol are armed and may open fire if we respond negatively to their demands."
+  pue.1.a:0 "It is a lost cause."
+  pue.1.b:0 "Order the governor to open fire."
+
+  pue.2.t:0 "The United States grants independence."
+  pue.2.d:0 "After the March on San Juan, the United States has decided to grant our independence. We are finally free to choose our own course."
+  pue.2.a:0 "After 500 years..."
+
+  pue.3.t:0 "San Juan Massacre"
+  pue.3.d:0 "After our march in San Juan, the Governor asked DC how they should respond... the worst outcome has arosen. Representatives from DC ordered the Governor to open fire."
+  pue.3.a:0 "We will never forget."
+
+  pue.4.t:0 "Puerto Rico Requests a Union"
+  pue.4.d:0 "Puerto Rico has recently aligned itself with us ideologically and have engaged in talks with our government to unify our two nations. This could lead to a new era in the Caribbean."
+  pue.4.a:0 "Let us raise ourself to our duty."
+  pue.4.b:0 "It is not in our interests."
+
+  pue.5.t:0 "[FROM.GetName] accepts our request for a union"
+  pue.5.d:0 "After our talks with the government of [FROM.GetName] of a union, they have responded to us and started to cooperate for a union between our two governments. This is a new age for the Caribbean."
+  pue.5.a:0 "We grow stronger..."
+
+  pue.6.t:0 "[FROM.GetName] rejects our request for a union"
+  pue.6.d:0 "After our talks with the government of [FROM.GetName] of a union, they have cut diplomatic relations with us and said that they find such requests insulting and will not respond to further diplomatic messages."
+  pue.6.a:0 "You know the rules! And so do I."
+
+  pue.7.t:0 "[FROM.GetName] wants to purchase Belize"
+  pue.7.d:0 "We have received an unusual request from [FROM.GetName] asking whether they could purchase Belize. They have promised substantial payment for the next 3 months if we accept."
+  pue.7.a:0 "Start the transfer."
+  pue.7.b:0 "We need Belize."
+
+  pue.8.t:0 "[FROM.GetName] accepts our request to purchase Belize"
+  pue.8.d:0 "[FROM.GetNameDef] has accepted our request to purchase Belize. We are now able to continue in our integration and conquest of Central America."
+  pue.8.a:0 "Our influence over America grows."
+
+  pue.9.t:0 "[FROM.GetName] rejects our request to purchase Belize"
+  pue.9.d:0 "[FROM.GetNameDef] has rejected our request to purchase Belize, we are unfortunately left with no choice but to accept this as we do not have the capability to invade Belize."
+  pue.9.a:0 "Damm it."

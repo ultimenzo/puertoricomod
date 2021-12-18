@@ -1,0 +1,24 @@
+state={
+	id=840
+	name="STATE_840"
+
+	history={
+		add_core_of = JAM
+		owner = ENG
+		buildings = {
+			infrastructure = 2
+		}
+
+		victory_points = {
+			12477 1
+		}
+	}
+
+
+	provinces={
+		12477 13244 13245 
+	}
+	manpower=268750
+	buildings_max_level_factor=1.000
+	state_category=town
+}

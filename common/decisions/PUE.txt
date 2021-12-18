@@ -1,0 +1,344 @@
+### Nationalist Marches ### 
+march_through_puerto_rico = {
+	PUE_march_in_state = {
+		icon = hol_draw_up_staff_plans
+		state_target = yes
+
+		available = {
+			NOT = { has_country_flag = marching_in_state_flag }
+		}
+
+		target_trigger = {
+			FROM = {
+				is_core_of = ROOT
+				owner = { tag = ROOT }
+				is_capital = no
+				NOT = { has_state_flag = nationalist_marched }
+			}
+		}
+
+		visible = {
+			ROOT = {
+				has_completed_focus = PUE_assertiveness
+			}
+		}
+
+		fire_only_once = no
+		cost = 25
+
+		days_remove = 30
+		on_map_mode = map_and_decisions_view 
+		complete_effect = {
+			set_country_flag = marching_in_state_flag
+		}
+
+		remove_effect = {
+			clr_country_flag = marching_in_state_flag
+			FROM = { set_state_flag = nationalist_marched }
+			random_list = {
+				33 = {
+					effect_tooltip = {
+						add_popularity = {
+							ideology = fascism
+							popularity = 0.1
+						}
+					}
+					hidden_effect = {
+						country_event = EST_events.801
+					}
+				}
+				33 = {
+					effect_tooltip = {
+						add_popularity = {
+							ideology = fascism
+							popularity = 0.15
+						}
+					}
+					hidden_effect = {
+						country_event = EST_events.802
+					}
+				}
+				33 = {
+					effect_tooltip = {
+						add_popularity = {
+							ideology = fascism
+							popularity = 0.2
+						}
+					}
+					hidden_effect = {
+						country_event = EST_events.803
+					}
+				}
+			}
+		}
+	}
+}
+
+form_caribbean_category = {
+	form_caribbean = {
+		icon = generic_form_nation
+
+		allowed = {			
+			OR = {
+				original_tag = PUE
+				original_tag = DOM
+				original_tag = HAI
+				original_tag = CUB
+			}
+		}
+
+		visible = {			
+			OR = {
+				original_tag = PUE
+				original_tag = DOM
+				original_tag = HAI
+				original_tag = CUB
+			}
+		}
+
+		available = {
+			NOT = {
+				has_global_flag = form_caribbean_flag
+			}
+			is_subject = no
+			# Cuba
+			custom_trigger_tooltip = {
+				tooltip = form_country_cuba_required_states_tt
+				controls_state = 853
+				controls_state = 854
+				controls_state = 315
+				controls_state = 855
+			}
+			# Haiti
+			custom_trigger_tooltip = {
+				tooltip = form_country_haiti_required_states_tt
+				controls_state = 843
+				controls_state = 842
+				controls_state = 318
+			}
+			
+			# Dominican Republic
+			custom_trigger_tooltip = {
+				tooltip = form_country_dominican_republic_required_states_tt
+				controls_state = 841
+				controls_state = 844
+				controls_state = 845
+				controls_state = 319
+			}
+
+			IF = {
+				LIMIT = { original_tag = CUB }
+				core_compliance = {
+					occupied_country_tag = HAI
+					value > 80
+				}
+				core_compliance = {
+					occupied_country_tag = DOM
+					value > 80
+				}
+			}
+
+			IF = {
+				LIMIT = { original_tag = DOM }
+				core_compliance = {
+					occupied_country_tag = HAI
+					value > 80
+				}
+				core_compliance = {
+					occupied_country_tag = CUB
+					value > 80
+				}
+			}
+
+			IF = {
+				LIMIT = { original_tag = HAI }
+				core_compliance = {
+					occupied_country_tag = CUB
+					value > 80
+				}
+				core_compliance = {
+					occupied_country_tag = DOM
+					value > 80
+				}
+			}
+
+			IF = {
+				LIMIT = { original_tag = PUE }
+				core_compliance = {
+					occupied_country_tag = CUB
+					value > 80
+				}
+				core_compliance = {
+					occupied_country_tag = DOM
+					value > 80
+				}
+				core_compliance = {
+					occupied_country_tag = HAI
+					value > 80
+				}
+			}
+		}
+
+		complete_effect = {
+			set_global_flag = form_caribbean_flag
+
+			# Curacao
+			custom_effect_tooltip = form_country_curacao_cored_states_tt
+			hidden_effect = {
+				695 = { add_core_of = ROOT }
+			}	
+
+			# Cuba
+			custom_effect_tooltip = form_country_cuba_cored_states_tt
+			hidden_effect = {
+				853 = { add_core_of = ROOT }
+				854 = { add_core_of = ROOT }
+				315 = { add_core_of = ROOT }
+				855 = { add_core_of = ROOT }
+				852 = { add_core_of = ROOT }
+			}
+
+			# Haiti
+			custom_effect_tooltip = form_country_haiti_cored_states_tt
+			hidden_effect = {
+				843 = { add_core_of = ROOT }
+				842 = { add_core_of = ROOT }
+				318 = { add_core_of = ROOT }
+			}
+
+			# Dominican Republic
+			custom_effect_tooltip = form_country_dominican_republic_cored_states_tt
+			hidden_effect = {
+				841 = { add_core_of = ROOT }
+				844 = { add_core_of = ROOT }
+				845 = { add_core_of = ROOT }
+				319 = { add_core_of = ROOT }
+			}
+
+			# Jamaica
+			custom_effect_tooltip = form_country_jamaica_cored_states_tt
+			hidden_effect = {
+				840 = { add_core_of = ROOT }
+				689 = { add_core_of = ROOT }
+			}
+
+			# Bahamas
+			custom_effect_tooltip = form_country_bahamas_cored_states_tt
+			hidden_effect = {
+				690 = { add_core_of = ROOT }
+				693 = { add_core_of = ROOT }
+			}
+			
+			# Puerto Rico
+			custom_effect_tooltip = form_country_puerto_rico_cored_states_tt
+			hidden_effect = {
+				686 = { add_core_of = ROOT }
+				836 = { add_core_of = ROOT }
+				837 = { add_core_of = ROOT }
+				838 = { add_core_of = ROOT }
+				839 = { add_core_of = ROOT }
+			}
+
+			# French and British Caribbean
+			custom_effect_tooltip = form_country_french_caribbean_cored_states_tt
+			custom_effect_tooltip = form_country_british_caribbean_cored_states_tt
+			hidden_effect = {
+				691 = { add_core_of = ROOT }
+
+				# Minor Islands
+				846 = { add_core_of = ROOT }
+				847 = { add_core_of = ROOT }
+				848 = { add_core_of = ROOT }
+				849 = { add_core_of = ROOT }
+				850 = { add_core_of = ROOT }
+				851 = { add_core_of = ROOT }
+				308 = { add_core_of = ROOT }
+				692 = { add_core_of = ROOT }
+				694 = { add_core_of = ROOT }
+			}	
+		}
+	}
+
+	integrate_central_american_state = {
+		icon = hol_draw_up_staff_plans
+		state_target = yes
+
+		available = {
+			FROM = {
+				is_fully_controlled_by = ROOT
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				OR = {
+					is_core_of = HON
+					is_core_of = ELS
+					is_core_of = GUA
+					is_core_of = NIC
+					is_core_of = COS
+					is_core_of = PAN
+				}
+			}
+		}
+
+		visible = {
+			ROOT = {
+				has_completed_focus = PUE_integrate_central_america
+			}
+		}
+
+		fire_only_once = no
+		cost = 25
+
+		days_remove = 30
+		on_map_mode = map_and_decisions_view
+
+		remove_effect = {
+			FROM = {
+				add_core_of = ROOT
+				remove_claim_by = ROOT
+			}
+		}
+	}
+
+	integrate_south_american_state = {
+		icon = hol_draw_up_staff_plans
+		state_target = yes
+
+		available = {
+			FROM = {
+				is_fully_controlled_by = ROOT
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				OR = {
+					is_core_of = VEN
+					is_core_of = COL
+					is_core_of = GYA
+				}
+			}
+		}
+
+		visible = {
+			ROOT = {
+				has_completed_focus = PUE_integrate_south_america
+			}
+		}
+
+		fire_only_once = no
+		cost = 25
+
+		days_remove = 30
+		on_map_mode = map_and_decisions_view
+
+		remove_effect = {
+			FROM = {
+				add_core_of = ROOT
+				remove_claim_by = ROOT
+			}
+		}
+	}
+}

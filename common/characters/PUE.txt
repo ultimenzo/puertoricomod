@@ -1,0 +1,144 @@
+characters = {
+	PUE_blanton_winship = {
+		name = PUE_blanton_winship
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/PUE/Portrait_PUE_Blanton_Winship.dds"
+			}
+		}
+
+		country_leader = {
+			expire = "1965.1.1"
+			ideology = conservatism
+			traits = {
+				pue_oppressing_nationalists
+			}
+		}
+	}
+
+	PUE_pedro_campos = {
+		name = PUE_pedro_campos
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/PUE/Portrait_PUE_Pedro_Albizu_Campos.dds"
+			}
+
+			army = {
+				small = "GFX_PUE_pedro_campos_advisor"
+			}
+		}
+
+		country_leader = {
+			expire = "1965.1.1"
+			ideology = falangism
+			traits = {
+				fascist_militia_leader
+			}
+			id = -1
+		}
+
+		advisor = {
+			slot = political_advisor 
+			idea_token = PUE_pedro_campos
+			allowed = {
+				original_tag = PUE
+			}
+
+			available = {
+				has_completed_focus = PUE_assertiveness
+				NOT = {
+					has_completed_focus = PUE_workers_republic
+				}
+			}
+
+			traits = {
+				fascist_demagogue
+			}
+		}
+	}
+
+	PUE_ramon_mirabal = {
+		name = PUE_ramon_mirabal
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/PUE/Portrait_generic_politician_south_america_1.dds"
+			}
+
+			army = {
+				small = "GFX_PUE_ramon_mirabal_advisor"
+			}
+		}
+
+		advisor = {
+			slot = political_advisor 
+			idea_token = PUE_ramon_mirabal
+			allowed = {
+				original_tag = PUE
+			}
+
+			available = {
+				has_completed_focus = PUE_workers_republic
+			}
+
+			traits = {
+				communist_revolutionary
+			}
+		}
+
+		country_leader = {
+			expire = "1965.1.1"
+			ideology = marxism
+		}
+	}
+
+	PUE_luis_munoz_marin = {
+		name = PUE_luis_munoz_marin
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/PUE/Portrait_PUE_Luis_Munoz_Marin.dds"
+			}
+
+			army = {
+				small = "GFX_PUE_luis_marin"
+			}
+		}
+
+		advisor = {
+			slot = political_advisor 
+			idea_token = PUE_luis_munoz_marin
+			allowed = {
+				original_tag = PUE
+			}
+
+			available = {
+				has_completed_focus = PUE_commonwealth
+			}
+
+			traits = {
+				democratic_reformer
+			}
+		}
+
+		country_leader = {
+			expire = "1965.1.1"
+			ideology = liberalism
+		}
+	}
+
+	PUE_american_military_junta = {
+		name = PUE_american_military_junta
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SOV/portrait_SOV_white_transitionary_council.dds"
+			}
+		}
+
+		country_leader = {
+			expire = "1965.1.1"
+			ideology = despotism
+			traits = {
+				PUE_lacking_support
+			}
+		}
+	}
+}

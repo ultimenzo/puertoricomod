@@ -1,0 +1,33 @@
+state={
+	id=855
+	name="STATE_855"
+	provinces={
+		7622 13303 13305 13307 
+	}
+	resources={
+		chromium=5
+	}
+
+	history={
+		owner = CUB
+		buildings = {
+			infrastructure = 4
+			arms_factory = 1
+			industrial_complex = 3
+			air_base = 3
+			7622 = {
+				naval_base = 3
+
+			}
+		}
+		add_core_of = CUB
+		victory_points = {
+			7622 10
+		}
+
+	}
+	
+	manpower=901979
+	state_category=large_city
+	buildings_max_level_factor=1.000
+}

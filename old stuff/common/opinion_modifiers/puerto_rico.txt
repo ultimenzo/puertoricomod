@@ -1,0 +1,26 @@
+opinion_modifiers = {
+	PUE_independence_movement = {
+		value = -30
+		decay = -0.5
+	}
+	PUE_supported_independence = {
+		value = -30
+		decay = -1
+	}
+
+	PUE_supported_independence_good = {
+		value = 50
+	}
+
+	pue_backstabbed_independence = {
+		value = -50
+	}
+
+	PUE_sent_envoy = {
+		value = 10
+	}
+
+	PUE_supported_us_anarchist_spain = {
+		value = 50
+	}
+}

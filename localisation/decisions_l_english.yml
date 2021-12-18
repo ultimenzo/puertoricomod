@@ -1,0 +1,26 @@
+﻿l_english:
+  march_through_puerto_rico:0 "March through Puerto Rico"
+  PUE_stomp_the_nationalists:0 "Stomp the Nationalists"
+  PUE_march_in_state:0 "March in [FROM.GetName]"
+  caribbean_all_possible_cores_states:0 "Caribbean States"
+  form_caribbean_category:0 "Unite the Caribbean"
+  form_caribbean:0 "Form the Caribbean Union"
+  integrate_central_american_state:0 "Integrate [FROM.GetName]"
+  integrate_south_american_state:0 "Integrate [FROM.GetName]"
+  pue_infiltrate_cuba:0 "Infiltrate Cuba"
+
+  ### Decision Tooltips ###
+  form_country_cuba_required_states_tt:0 "Controls all §YCuban§! states excluding §YGuantanamo Bay§!"
+  form_country_dominican_republic_required_states_tt:0 "Controls all §YDominican§! states"
+  form_country_haiti_required_states_tt:0 "Controls all §YHaitian§! states"
+
+  form_country_cuba_cored_states_tt:0 "Gains cores on all §YCuban§! states."
+  form_country_dominican_republic_cored_states_tt:0 "Gains cores on all §YDominican§! states."
+  form_country_haiti_cored_states_tt:0 "Gains cores on all §YHaitian§! states."
+  form_country_jamaica_cored_states_tt:0 "Gains cores on all §YJamaica§! states."
+  form_country_puerto_rico_cored_states_tt:0 "Gains cores on all §YPuerto Rican§! states."
+  form_country_bahamas_cored_states_tt:0 "Gains cores on all §YBahamian§! states."
+  form_country_curacao_cored_states_tt:0 "Gains core on §YCuraçao§!."
+  form_country_french_caribbean_cored_states_tt:0 "Gains cores on all §YFrench§! states in the Caribbean."
+  form_country_british_caribbean_cored_states_tt:0 "Gains cores on all §YBritish§! states in the Caribbean."
+

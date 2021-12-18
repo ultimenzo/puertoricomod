@@ -1,0 +1,31 @@
+
+state={
+	id=844
+	name="STATE_844"
+	provinces={
+		4598 10484 13253 13254 13255 13256 13257 13258 13259 13261 13262 
+	}
+
+	history={
+		owner = DOM
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			13258 = {
+				naval_base = 2
+			}
+		}
+		add_core_of = DOM
+
+		victory_points = {
+			13258 5
+		}
+		victory_points = {
+			13254 3
+		}
+	}
+
+	manpower=251200
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

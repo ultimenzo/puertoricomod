@@ -1,0 +1,327 @@
+﻿l_english:
+  #################
+  ### Decisions ###
+  #################
+  PUE_defeat_usa_category:0 "The [PUE.GetAdjective]-[USA.GetAdjective] war"
+  PUE_defeat_usa:0 "Propose peace deal to the [USA.GetName]"
+
+  PUE_anarchist_integration:0 "Integrate Caribbean Communes"
+  PUE_proclaim_caribbean_anarchism:0 "Proclaim Caribbean Anarchism"
+  PUE_integrate_cuba:0 "Integrate Cuba"
+  PUE_integrate_dominican_republic:0 "Integrate the Dominican Republic"
+  PUE_integrate_haiti:0 "Integrate Haiti"
+  PUE_integrate_jamaica:0 "Integrate Jamaica"
+  PUE_integrate_curacao:0 "Integrate Curaçao"
+  PUE_integrate_trinidad_and_tobago:0 "Integrate Trinidad and Tobago"
+  PUE_integrate_bahamas:0 "Integrate the Bahamas"
+  PUE_integrate_grenada:0 "Integrate Grenada"
+  PUE_integrate_st_vincent:0 "Integrate St Vincent"
+  PUE_integrate_barbados:0 "Integrate Barbados"
+  PUE_integrate_martinique:0 "Integrate Martinique"
+  PUE_integrate_dominica:0 "Integrate Dominica"
+  PUE_integrate_guadeloupe:0 "Integrate Guadeloupe"
+  PUE_integrate_montserrat:0 "Integrate Monserrat"
+  PUE_integrate_st_lucia:0 "Integrate St. Lucia"
+  PUE_integrate_anguilla:0 "Integrate Anguilla"
+
+  PUE_anarchist_revolts:0 "The Seeds of Revolution"
+  PUE_revolt_hispaniola:0 "Revolt in Hispaniola"
+
+  #########################
+  ### Political Parties ###
+  #########################
+  PUE_democratic_party:0 "GOP"
+  PUE_democratic_party_long:0 "Governorship of Puerto Rico"
+  PUE_liberal_democratic_party:0 "PPD"
+  PUE_liberal_democratic_party_long:0 "Popular Democratic Party"
+  PUE_nationalist_democratic_party:0 "DPNPR"
+  PUE_nationalist_democratic_party_long:0 "Democratic Nationalist Party of Puerto Rico"
+  PUE_fascism_party:0 "PNPR"
+  PUE_fascism_party_long:0 "Nationalist Party of Puerto Rico"
+  PUE_communism_party:0 "PSP"
+  PUE_communism_party_long:0 "Puerto Rican Socialist Party"
+  PUE_anarchist_party:0 "PAPR"
+  PUE_anarchist_party_long:0 "El Partido Anarquista Puertorriqueño"
+
+  ##############
+  ### Events ###
+  ##############
+  # News Event
+  pue_news.1.t:0 "President [USA.GetLeader] declares martial law in Puerto Rico"
+  pue_news.1.d:0 "\nToday, the President of [USA.GetNameDef] has declared martial law in the unincorporated territory of Puerto Rico after a small group of nationalists entered the government's head quarter in [PUE.Capital.GetName] and assasinated Blanton Winship.\n\nIt is unknown what will happen in Puerto Rico as [USA.GetLeader] has yet to announce their intentions."
+  pue_news.1.a:0 "Interesting development."
+  pue_news.1.b:0 "We will bring the situation back under our control."
+  pue_news.1.c:0 "No amount of opression will stop us."
+
+  pue_news.2.t:0 "Caribbean unites against [USA.GetAdjective] colonialism!"
+  pue_news.2.d:0 "An unprecedented move has occurred in the Western hemisphere, after Puerto Rico declared its independence, it asked for support from fellow Caribbean, Central American and Northern South American countries and they now all stand together against the [USA.GetName]. \n\nThe fate of these nations now depends on a reply to this action from [USA.Capital.GetName]."
+  pue_news.2.a:0 "Troubling news."
+  pue_news.2.b:0 "The Caribbean? How many divisions do they have?"
+  pue_news.2.c:0 "The boat has been rocked."
+
+  pue_news.3.t:0 "[USA.GetName] declares war on the Caribbean"
+  pue_news.3.d:0 "After the news of the Caribbean uniting, President [USA.GetLeader] announced that this course of action is destabalizing towards the Western hemisphere and has announced that, following a late night vote from Congress, there will now be a state of war between the Caribbean Union and the [USA.GetName].\n\nThere have been weak signs of protests from all other American nations."
+  pue_news.3.a:0 "Troubling news."
+  pue_news.3.b:0 "We will crush these rats."
+  pue_news.3.c:0 "We must win this."
+
+  pue_news.4.t:0 "The Fall of the Panama Canal"
+  pue_news.4.d:0 "In what must be considered a monumental blow to American hegemony, Caribbean forces have taken control of the Panama canal after forcing the surrender of its garrison. Several parties of American soldiers reportedly escaped into the nearby jungle to wage guerrilla warfare, but it is not believed that they can significantly threaten the Caribbean presence.\n\nWith the fall of the canal, America's inability to defeat the Caribbean nations has been revealed. It is theorized that the Caribbean nations will now try to enter peace talks with the [USA.GetName]"
+  pue_news.4.a:0 "The [USA.GetName] should have just given them their independence."
+  pue_news.4.b:0 "FAKE NEWS!"
+  pue_news.4.c:0 "We have shattered the eagle's resolve."
+
+  pue_news.5.t:0 "The [USA.GetName] accepts peace deal from [PUE.GetName]."
+  pue_news.5.d:0 "\nThe [USA.GetName] has entered into a ceasefire which grants Panama the Canal zone permanently and ceases all aggression with all Caribbean allied states. Peace talks are expected to last weeks if not months, but the Caribbean states have come out on top."
+  pue_news.5.a:0 "When pigs fly."
+  pue_news.5.b:0 "We must move on."
+  pue_news.5.c:0 "We've done it."
+
+  pue_news.6.t:0 "The [USA.GetName] rejects ceasefire from [PUE.GetName]."
+  pue_news.6.d:0 "\nAfter the fall of the Panama canal, representatives from the allied powers of the Caribbean sent a ceasefire to the United States. This ceasefire has been rejected and the United States has replied saying \"We will never stop until our rightful lands are returned and our interests are no longer threatened\""
+  pue_news.6.a:0 "The Imperialist States of America."
+  pue_news.6.b:0 "It is our rightful territory."
+  pue_news.6.c:0 "Will these Imperialists ever give up?."
+
+  pue_news.7.t:0 "Anarchism in Puerto Rico"
+  pue_news.7.d:0 "After the declaration of independence and victory from against the United States. Puerto Rico has chosen a different political path than what most predicted. Anarchist communities have started rising up in all parts of the country. Puerto Rico has become the first anarchist region in the Western Hemisphere."
+  pue_news.7.a:0 "Interesting..."
+  pue_news.7.b:0 "We will shall light the spark that will liberate the Americas."
+  # Country Events
+  pue.1.t:0 "The Assasination of Blanton Winship"
+  pue.1.d:0 "It has been reported from the local garisson in [PUE.Capital.GetName] that the Presidentially-apointed governor has been assasinated by a small group of nationalists. We have been advised to declare martial law by the Presidential cabinet, but we fear there may be additional reprisals if we do so."
+  pue.1.a:0 "Declare Martial Law."
+  pue.1.b:0 "We must not cause further social unrest."
+
+  pue.2.t:0 "Martial Law declared"
+  pue.2.d:0 "We have received news from Washington, DC which say that President [USA.GetLeader] is mobilizing the national guard and declaring martial law."
+  pue.2.a:0 "We will kick the Yankees off of our shores."
+
+  pue.4.t:0 "[PUE.GetName] asks us for support for their independence."
+  pue.4.d:0 "[PUE.GetName] has asked for our support in achieving their independence, they have also notified us that they are not just asking us but multiple countries in the region, we will not be alone if we make the decision to support them."
+  pue.4.a:0 "We will support our fellow Caribbean brother."
+  pue.4.b:0 "We cannot stand against the [USA.GetName]"
+
+  pue.5.t:0 "[PUE.GetName] has declared independence!"
+  pue.5.d:0 "We have received news from a newly established local government in [PUE.GetName] that they will no longer be allowing local garrisons and will not accept any orders from the President anymore."
+  pue.5.a:0 "They have no authority to do that."
+  pue.5.b:0 "We will allow them to gain independence."
+
+  pue.6.t:0 "The [USA.GetName] have rejected our government."
+  pue.6.d:0 "After we sent news from [PUE.Capital.GetName] to [USA.Capital.GetName], we quickly received a reply which contained messages of aggression if we did not back down. What should we do?"
+  pue.6.a:0 "We will reach out to our Caribbean brothers!"
+  pue.6.b:0 "We are not powerful enough to stand against the [USA.GetName]."
+
+  pue.7.t:0 "The [USA.GetName] yields!"
+  pue.7.d:0 "We have received news from [USA.Capital.GetName] that they have acknowledged our local government and have recognized us a legitimate goverment in America. We are now also covered under the Monroe Doctrine."
+  pue.7.a:0 "We did it!"
+
+  pue.8.t:0 "Caribbean unites against us!"
+  pue.8.d:0 "The Caribbean has united against us in favor of [PUE.GetAdjective] independence. What should we do?"
+  pue.8.a:0 "We are not warmongerers."
+  pue.8.b:0 "We will reclaim our rightful land, and subjugate anyone standing in our way."
+
+  pue.9.t:0 "The [USA.GetName] attacks Puerto Rico!"
+  pue.9.d:0 "Following our confrotation against the [USA.GetName], we have received news from [PUE.Capital.GetName] that the [USA.GetName] has sent a declaration of war.\n\nDo we stand with our Caribbean brother or do we betray them?"
+  pue.9.a:0 "We will stand with our brother in glory!"
+  pue.9.b:0 "We cannot face the [USA.GetName] and win! It was a bluff."
+
+  pue.10.t:0 "[FROM.GetName] has backstabbed us."
+  pue.10.d:0 "After we notified our ally of the declaration of war against us, the cowards didn't follow through with their obligations to us."
+  pue.10.a:0 "Darn the traitors!"
+
+  pue.11.t:0 "[FROM.GetName] supports us!"
+  pue.11.d:0 "We have received news from [FROM.GetName] that their leader has agreed to support our independence against the [USA.GetName]"
+  pue.11.a:0 "We thank our brother."
+
+  pue.12.t:0 "[FROM.GetName] is unable to support us."
+  pue.12.d:0 "We have received news from [FROM.GetName] that their leader has reluctantly declined to support our independence. While we hold no grudges against them, it is still a major setback."
+  pue.12.a:0 "We must move on."
+
+  pue.13.t:0 "[PUE.GetName] proposes peace."
+  pue.13.d:0 "After our inability to defend the Panama Canal, the Government in [PUE.Capital.GetName] has proposed a peace deal in which we transfer the Canal Zone to Panama and cease all aggressions. How should we respond?"
+  pue.13.a:0 "We don't want to have our own winter war."
+  pue.13.b:0 "We will recover the Canal and our territory."
+  
+  pue.14.t:0 "[USA.GetName] accepts peace deal."
+  pue.14.d:0 "After a long talk between representatives from our faction and the [USA.GetName] we have settled on a peace deal in which the [USA.GetName] transfers the canal zone to Panama and ceases all aggression. We would have tried to bargain something more, but this could have cost us the war. \n\nLet us take our moment of victory and shatter the eagle's pride."
+  pue.14.a:0 "We have persevered."
+
+  pue.15.t:0 "The Eagle is beaten."
+  pue.15.d:0 "Our representatives have returned home from [CUB.Capital.GetName] and have greeted us with great news as they inform us of the deal brokered in which Panama has recovered their lost territory in the Canal zone and the US has ceased all aggression."
+  pue.15.a:0 "Let us bathe in victory!"
+
+  pue.16.t:0 "The [USA.GetName] declares war!"
+  pue.16.d:0 "The [USA.GetName] has announced that they do not consider us a legitimate government and a state of war now exists between us. We now have to hope that our allies will honour our agreements."
+  pue.16.a:0 "It is victory or death."
+
+  pue.17.t:0 "Puerto Rican anarchists send us support"
+  pue.17.d:0 "We are not alone in our cause, we have received support from our old colony in the New World. Puerto Rico has sent us guns and has opened diplomatic channels with our council."
+  pue.17.a:0 "A fruitful alliance may develop to combat our enemies."
+
+  pue.18.t:0 "Anarchism in Hispaniola"
+  pue.18.d:0 "An uprising in the eastern region of Hispaniola. After we pledged our support to this cause, the governments of the Dominican Republic and Haiti have united into one, hoping to crush this uprising and us."
+  pue.18.a: "We shall fight them on the beaches..."
+
+  pue.19.t:0 "[FROM.GetAdjective] Civil War Ends"
+  pue.19.d:0 "The uprising in [FROM.GetNameDef] has succesfully liberated the people in their country. The state has been dissolved and now looks to us for protection."
+  pue.19.a:0 "We will will shelter them with open arms."
+
+  #####################
+  ### Faction Names ###
+  #####################
+  PUE_caribbean_support:0 "Caribbean Independence Group"
+
+  ################
+  ### Tooltips ###
+  ################
+  PUE_can_lead_to_war_with_us:0 "§RThis path may lead to war with the [USA.GetName].§!"
+  PUE_will_unify_cab_against_USA:0 "§HThis path while risky will unite the Caribbean against the [USA.GetName]. If the United States rejects our independence and we, or one of our allies, are able to capture the [685.GetName] we will be able to negotiate a peace with the [USA.GetName].§!"
+  PUE_pleading:0 "§HThis will make a nation more likely to side with us against the United States.§!"
+  PUE_prepare_for_independence_tt:0 "Gains §H5 units§! with §H6 Infantry§! batallions."
+  PUE_if_declare_martial_law_tt:0 "\n§HEffects if the §!(§H[USA.GetFlag][USA.GetName]§!)§H declares martial law:§!"
+  pue_new_line_tt:0 "\n\n"
+  pue_backed_down_independence:0 "Backed down from independence"
+  pue_anarchist_uprising_dom:0 "§W(§H[DOM.GetFlag][DOM.GetName]§!) The §HAnarchist§! supporters start a civil war."
+  pue_anarchist_uprising_warn:0 "§RWe will be dragged into this conflict.§W"
+
+  ### Forming ###
+  form_country_caribbean_tt:0 "Controls any §YCaribbean§! states."
+  form_country_cuba_required_states_tt:0 "Controls all §YCuban§! states."
+  form_country_cuba_coring_states_tt:0 "Gains cores on all §YCuban§! states."
+  form_country_dominican_republic_required_states_tt:0 "Controls all §YDominican§! states."
+  form_country_dominican_republic_coring_states_tt:0 "Gains cores on all §YDominican§! states."
+  form_country_haiti_required_states_tt:0 "Controls all §YHaitian§! states."
+  form_country_haiti_coring_states_tt:0 "Gains cores on all §YHaitian§! states."
+  form_country_jamaica_required_states_tt:0 "Controls all §YJamaican§! states."
+  form_country_jamaica_coring_states_tt:0 "Gains cores on all §YJamaican§! states."
+  form_country_curacao_required_states_tt:0 "Controls §YCuraçao§!."
+  form_country_curacao_coring_states_tt:0 "Gains core on §YCuraçao§!."
+  form_country_trinidad_required_states_tt:0 "Controls §YTrinidad and Tobago§!."
+  form_country_trinidad_coring_states_tt:0 "Gains core on §YTrinidad and Tobago§!."
+  form_country_bahamas_required_states_tt:0 "Controls all §YBahamian§! states."
+  form_country_bahamas_coring_states_tt:0 "Gains cores on all §YBahamian§! states."
+
+  #########################
+  ### Opinion Modifiers ###
+  #########################
+  PUE_independence_movement:0 "Independence Movement"
+  PUE_supported_independence:0 "Supported Puerto Rican Independence"
+  PUE_supported_independence_good:0 "Supported Our Independence"
+  pue_backstabbed_independence:0 "Backstabber"
+  PUE_sent_envoy:0 "Sent Envoys"
+  PUE_supported_us_anarchist_spain:0 "Supported us"
+
+  #############
+  ### Ideas ###
+  #############
+  pue_martial_law:0 "Martial Law"
+  pue_nationalism:0 "Bolster Nationalism"
+  pue_american_government:0 "American Government"
+  pue_american_government_desc:0 "While Puerto Rico has been granted some local autonomy, the Governorship is still appointed by the President and has zero input from the people."
+  pue_stabalize_the_nation:0 "Stabalizing the Nation"
+  pue_defending_independence:0 "Defending Caribbean Independence"
+  pue_defeated_the_eagle:0 "Triumph in the Caribbean"
+  pue_defeated_the_eagle_desc:0 "We fought against the Americans to support the independence of Puerto Rico."
+  pue_caribbean_resistance:0 "Resistance from Caribbean Nations"
+  pue_carribean_resistance_desc:0 "There has been resistance from not only caribbean nations but our own population against this war. As we call ourselves the champion liberty and peace, why are we rejecting the Puerto Rican's wishes and sending our men to die to go against them?"
+  pue_volunteer_forces:0 "Volunteer Forces"
+  pue_agrarian_nation:0 "Agrarian Nation"
+  pue_agrarian_nation_industrial:0 "Industrializing Society"
+  pue_agrarian_nation_industrial_2:0 "Industrialized Society"
+  pue_recent_industrial_funding:0 "Funding Industry"
+
+  ### Political Advisors ###
+  PUE_ramon_mirabal_advisor:0 "Ramón Mirabal"
+  PUE_pedros_campos_advisor:0 "Pedro Albizu Campos"
+  PUE_luis_munoz_marin:0 "Luis Muñoz Marín"
+
+  #####################
+  ### Leader Traits ###
+  ##################### 
+  oppressing_nationalists:0 "Supressing Nationalism"
+  
+  ###############
+  ### FOCUSES ###
+  ###############
+  pue_guidance:0 "Loyalty"
+  pue_assertiveness:0 "Assertiveness"
+  pue_assasinate_winship:0 "Assasinate Governor Winship"
+  pue_prepare_for_independence:0 "Prepare for our independence"
+  pue_plea_to_central_america:0 "Appeal to Central American Nations"
+  pue_plea_to_south_america:0 "Appeal to South American Nations"
+  pue_plea_to_caribbean:0 "Appeal to the Caribbean Nations"
+  pue_declare_independence:0 "Declare our independence"
+  pue_bolster_nationalism:0 "Bolster Nationalism"
+  pue_national_recovery:0 "Stabalizing our new nation"
+
+  ### Anarchism Focuses ###
+  pue_an_alternative:0 "Follow Aragon"
+  pue_support_spanish_anarchism:0 "Support Spanish Anarchism"
+  pue_anarchism_appropriate_the_means_of_production:0 "Appropriate the Means of Productions"
+  pue_anarchism_autogestion:0 "Autogestion"
+  pue_anarchism_collectivization:0 "Collectivization"
+  pue_anarchism_worker_councils:0 "Worker's Councils"
+  pue_anarchism_equality_for_women:0 "Equality for Both Genders"
+  pue_anarchism_collectivized_society:0 "Collectivized Society"
+
+  ### Industrial Focuses ###
+  pue_revitalize_the_economy:0 "Revitalize the Economy"
+  pue_revitalize_the_economy_desc:0 "Note: It didn't exist in the first place..."
+  pue_force_the_farmers_into_factories:0 "Force the Farmers into Factories" 
+  pue_fund_additional_industry:0 "Fund Additional Industry"
+  pue_infastructure_projects:0 "Fund Infrastructure Projects"
+  pue_dockyard_projects:0 "Fund Dockyard Projects"
+  pue_industrialize_the_nation:0 "Industrialize the Nation"
+  pue_expand_the_upr:0 "Expand the University of Puerto Rico"
+  pue_free_education_for_all:0 "Subsidize Education"
+
+  ########################
+  ### Map localisation ###
+  ########################
+  # VPs
+  VICTORY_POINTS_4155:0 "Saint Croix"
+  VICTORY_POINTS_13236:0 "Charlotte Amalie"
+  VICTORY_POINTS_13237:0 "Fajardo"
+  VICTORY_POINTS_13238:0 "Caguas"
+  VICTORY_POINTS_13239:0 "Ponce"
+  VICTORY_POINTS_13240:0 "Mayagüez"
+  VICTORY_POINTS_13241:0 "Lares"
+  VICTORY_POINTS_13242:0 "Arecibo"
+  VICTORY_POINTS_13254:0 "Santiago de los Caballeros"
+  VICTORY_POINTS_13258:0 "Puerto Plata"
+  VICTORY_POINTS_13246:0 "Punta Cana"
+  VICTORY_POINTS_13265:0 "Barahona"
+  VICTORY_POINTS_13274:0 "Port-de-Paix"
+  VICTORY_POINTS_13267:0 "Port Salut"
+  VICTORY_POINTS_13277:0 "Gonaives"
+  VICTORY_POINTS_12477:0 "Montego Bay"
+  VICTORY_POINTS_13279:0 "Guantanamo Bay"
+  VICTORY_POINTS_13294:0 "Moron"
+  VICTORY_POINTS_13291:0 "Florida"
+  VICTORY_POINTS_13300:0 "Cienfuegos"
+  VICTORY_POINTS_13311:0 "Pinar del Rio"
+  VICTORY_POINTS_12347:0 "Banes"
+  VICTORY_POINTS_1550:0 "Cuevas del Turquino"
+  # States
+  STATE_835:0 "Virgin Islands"
+  STATE_836:0 "Western Puerto Rico"
+  STATE_837:0 "Caguas"
+  STATE_838:0 "Ponce"
+  STATE_839:0 "Fajardo"
+  STATE_840:0 "Western Jamaica"
+  STATE_841:0 "Eastern Hispaniola"
+  STATE_842:0 "Southwest Hispaniola"
+  STATE_843:0 "Northwest Hispaniola"
+  STATE_844:0 "Northern Central Hispaniola"
+  STATE_845:0 "Southern Central Hispaniola"
+  STATE_846:0 "Grenada"
+  STATE_847:0 "St Vincent and the Grenadines"
+  STATE_848:0 "Barbados"
+  STATE_849:0 "Martinique"
+  STATE_850:0 "Dominica"
+  STATE_851:0 "Guadeloupe"
+  STATE_852:0 "Guantanamo Bay"
+  STATE_853:0 "Eastern Cuba"
+  STATE_854:0 "Central Cuba"
+  STATE_855:0 "Havana"

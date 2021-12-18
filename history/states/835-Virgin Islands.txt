@@ -1,0 +1,36 @@
+state={
+	id=835
+	name="STATE_835"
+	provinces={
+		4155 13236
+	}
+	state_category = small_island
+
+	history={
+		add_core_of = PUE
+		owner = PUE
+		victory_points = {
+			4155 1
+
+		}
+		victory_points = {
+			13236 1
+		}
+
+		buildings = {
+			industrial_complex = 1
+			infrastructure = 2
+			air_base = 2
+			4155 = {
+				naval_base = 1
+			}
+
+			13236 = {
+				naval_base = 1
+			}
+		}
+	}
+
+	manpower=22012
+	buildings_max_level_factor=1.000
+}

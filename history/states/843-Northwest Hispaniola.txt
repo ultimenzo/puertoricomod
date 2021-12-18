@@ -1,0 +1,32 @@
+
+state={
+	id=843
+	name="STATE_843"
+	provinces={
+		1594 13273 13274 13275 13276 13277 13278 
+	}
+
+	history={
+		owner = HAI
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			13274 = {
+				naval_base = 2
+			}
+		}
+		add_core_of = HAI
+
+		victory_points = {
+			13274 5
+		}
+
+		victory_points = {
+			13277 2
+		}
+	}
+	
+	manpower=714000
+	buildings_max_level_factor=1.000
+	state_category=town
+}

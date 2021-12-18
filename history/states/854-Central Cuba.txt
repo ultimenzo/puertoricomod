@@ -1,0 +1,41 @@
+state={
+	id=854
+	name="STATE_854"
+	provinces={
+		4476 7451 7546 10374 10498 13286 13287 13288 13289 13290 13291 13292 13293 13294 13295 13296 13297 13298 13299 13300 13301 13302 13304 
+	}
+	resources={
+		steel=16.000
+		chromium=50
+	}
+
+
+	history={
+		owner = CUB
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+
+			13294 = {
+				naval_base = 2
+			}
+		}
+
+		victory_points = {
+			13294 3
+		}
+
+		victory_points = {
+			13291 3
+		}
+
+		victory_points = {
+			13300 3
+		}
+		add_core_of = CUB
+	}
+	
+	manpower=1623563
+	state_category=town
+	buildings_max_level_factor=1.000
+}

@@ -1,0 +1,243 @@
+add_namespace = pue_news
+
+# Martial Law
+news_event = {
+	id = pue_news.1
+	title = pue_news.1.t
+	desc = pue_news.1.d
+	picture = GFX_news_event_generic_usa_treaty
+
+	is_triggered_only = yes
+	option = {
+		name = pue_news.1.a
+		trigger = {
+		  NOT = {
+			TAG = USA
+	  		TAG = PUE
+		  } 
+		}
+	}
+
+	option = {
+		name = pue_news.1.b
+		trigger = { TAG = USA }
+	}
+
+	option = {
+		name = pue_news.1.c
+		trigger = { TAG = PUE }
+	}
+}
+
+# Carribean Unites Against American Colonialism
+news_event = {
+	id = pue_news.2
+	title = pue_news.2.t
+	desc = pue_news.2.d
+	picture = GFX_news_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+	option = {
+		name = pue_news.2.a
+		trigger = {
+			 NOT = {
+				 TAG = USA
+				 TAG = PUE
+				 is_in_faction_with = PUE
+			 } 
+		}
+	}
+
+	option = {
+		name = pue_news.2.b
+		trigger = { TAG = USA }
+	}
+
+	option = {
+		name = pue_news.2.c
+		trigger = {
+			OR = {
+				TAG = PUE
+				is_in_faction_with = PUE
+			}
+	 	}
+	}
+}
+
+# America goes to war with the Caribbean
+news_event = {
+	id = pue_news.3
+	title = pue_news.3.t
+	desc = pue_news.3.d
+	picture = GFX_news_event_generic_usa_treaty
+
+	is_triggered_only = yes
+	option = {
+		name = pue_news.3.a
+		trigger = {
+			 NOT = {
+				 TAG = USA
+				 TAG = PUE
+				 is_in_faction_with = PUE
+			 } 
+		}
+	}
+
+	option = {
+		name = pue_news.3.b
+		trigger = { TAG = USA }
+	}
+
+	option = {
+		name = pue_news.3.c
+		trigger = {
+			OR = {
+				TAG = PUE
+				is_in_faction_with = PUE
+			}
+	 	}
+	}
+}
+
+# The Fall of the Panama Canal
+news_event = {
+	id = pue_news.4
+	title = pue_news.4.t
+	desc = pue_news.4.d
+	picture = GFX_news_event_soldiers_marching
+	
+	major = yes
+	is_triggered_only = yes
+	trigger = {
+		AND = {
+			OR = {
+				PUE = {
+					controls_state = 685
+				}
+				any_other_country = {
+					is_in_faction_with = PUE
+					controls_state = 685
+				}
+			}
+			685 = { is_owned_by = USA }
+			USA = {
+				  has_war_with = PUE
+				}
+			NOT = { has_global_flag = fall_of_panama_pr }
+		}
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_panama_pr
+	}
+	
+	option = {
+		name = pue_news.4.a
+		trigger = {
+			 NOT = {
+				 TAG = USA
+				 TAG = PUE
+				 is_in_faction_with = PUE
+			 } 
+		}
+	}
+
+	option = {
+		name = pue_news.4.b
+		trigger = { TAG = USA }
+	}
+
+	option = {
+		name = pue_news.4.c
+		trigger = {
+			OR = {
+				TAG = PUE
+				is_in_faction_with = PUE
+			}
+	 	}
+	}
+}
+
+# United States accepts peace deal from Puerto Rico
+news_event = {
+	id = pue_news.5
+	title = pue_news.5.t
+	desc = pue_news.5.d
+	picture = GFX_news_event_generic_usa_treaty
+
+	is_triggered_only = yes
+	option = {
+		name = pue_news.5.a
+		trigger = {
+		  NOT = {
+			TAG = USA
+	  		TAG = PUE
+		  } 
+		}
+	}
+
+	option = {
+		name = pue_news.5.b
+		trigger = { TAG = USA }
+	}
+
+	option = {
+		name = pue_news.5.c
+		trigger = { TAG = PUE }
+	}
+}
+
+# United States rejects peace deal from Puerto Rico
+news_event = {
+	id = pue_news.6
+	title = pue_news.6.t
+	desc = pue_news.6.d
+	picture = GFX_news_event_generic_usa_treaty
+
+	is_triggered_only = yes
+	option = {
+		name = pue_news.6.a
+		trigger = {
+		  NOT = {
+			TAG = USA
+	  		TAG = PUE
+		  } 
+		}
+	}
+
+	option = {
+		name = pue_news.6.b
+		trigger = { TAG = USA }
+	}
+
+	option = {
+		name = pue_news.6.c
+		trigger = { TAG = PUE }
+	}
+}
+
+# Anarchism in Puerto Rico
+news_event = {
+	id = pue_news.7
+	title = pue_news.7.t
+	desc = pue_news.7.d
+	picture = GFX_news_event_spr_spanish_civil_war
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = pue_news.7.a
+		trigger = {
+		  NOT = {
+	  		TAG = PUE
+		  } 
+		}
+	}
+
+	option = {
+		name = pue_news.7.b
+		trigger = { TAG = PUE }
+	}
+}

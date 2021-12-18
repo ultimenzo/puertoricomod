@@ -1,0 +1,17 @@
+opinion_modifiers = {
+	CARIBBEAN_investments = {
+		value = 25
+	}
+
+	CARIBBEAN_trade = {
+		value = 30
+	}
+
+	CARIBBEAN_alliance = {
+		value = 50
+	}
+
+	CARIBBEAN_claimed_our_land = {
+		value = -50
+	}
+}

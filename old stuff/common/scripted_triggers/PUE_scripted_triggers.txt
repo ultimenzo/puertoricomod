@@ -1,0 +1,31 @@
+PUE_is_caribbean_state = {
+	OR = {
+		state = 693
+		state = 690
+		state = 308
+		state = 315
+		state = 318
+		state = 319
+		state = 689
+		state = 692
+		state = 694
+		state = 695
+		state = 691
+		state = 812
+		state = 813
+		state = 814
+		state = 815
+		state = 816
+		state = 817
+		state = 818
+		state = 819
+		state = 820
+		state = 821
+		state = 822
+		state = 823
+		state = 824 
+		state = 825
+		state = 826
+		state = 827
+	}
+}

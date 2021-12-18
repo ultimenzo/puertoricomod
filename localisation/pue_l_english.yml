@@ -1,0 +1,42 @@
+﻿l_english:
+  #########################
+  ### Political Parties ###
+  #########################
+  PUE_democratic_party:0 "GOP"
+  PUE_democratic_party_long:0 "Governorship of Puerto Rico"
+  PUE_liberal_democratic_party:0 "PPD"
+  PUE_liberal_democratic_party_long:0 "Popular Democratic Party"
+  PUE_nationalist_democratic_party:0 "DPNPR"
+  PUE_nationalist_democratic_party_long:0 "Democratic Nationalist Party of Puerto Rico"
+  PUE_fascism_party:0 "PNPR"
+  PUE_fascism_party_long:0 "Nationalist Party of Puerto Rico"
+  PUE_communism_party:0 "PSP"
+  PUE_communism_party_long:0 "Puerto Rican Socialist Party"
+  PUE_anarchist_party:0 "PAPR"
+  PUE_anarchist_party_long:0 "El Partido Anarquista Puertorriqueño"
+
+  #######################
+  ### Caribbean Union ###
+  #######################
+  CAB_UNIFIED_fascism:0 "Caribbean State"
+  CAB_UNIFIED_fascism_DEF:0 "the Caribbean State"
+  CAB_UNIFIED_democratic:0 "Caribbean Federation"
+  CAB_UNIFIED_democratic_DEF:0 "the Caribbean Federation"
+  CAB_UNIFIED_communism:0 "People's Republic of the Caribbean"
+  CAB_UNIFIED_communism_DEF:0 "the People's Republic of the Caribbean"
+  CAB_UNIFIED_neutrality:0 "Caribbean Republic"
+  CAB_UNIFIED_neutrality_DEF:0 "the Caribbean Republic"
+  CAB_UNIFIED_fascism_ADJ:0 "Caribbean"
+  CAB_UNIFIED_democratic_ADJ:0 "Caribbean"
+  CAB_UNIFIED_neutrality_ADJ:0 "Caribbean"
+  CAB_UNIFIED_communism_ADJ:0 "Caribbean"
+
+  CAB_UNIFIED_faction_fascism:0 "Caribbean Associated States"
+  CAB_UNIFIED_faction_communism:0 "Caribbean Worker States"
+
+  ### Tech Sharing ###
+  caribbean_allied_research_name:0 "Caribbean Research"
+  caribbean_allied_research_desc:0 "Reduced research time for technologies researched by the Caribbean States and their allies."
+
+  ### Flags ###
+  form_caribbean_flag:0 "Caribbean Union has been formed"

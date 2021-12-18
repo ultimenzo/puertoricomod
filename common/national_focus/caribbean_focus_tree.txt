@@ -1,0 +1,30 @@
+focus_tree = {
+	# They aren't all "exactly" Caribbean nations but we're gonna say they are
+	id = caribbean_focus_tree
+
+	shared_focus = CARIBBEAN_rejoin_the_railways
+	shared_focus = CAB_political_effort
+
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			OR = {
+				tag = CUB
+				tag = DOM
+				tag = HAI
+				tag = GUA
+				tag = HON
+				tag = ELS
+				tag = NIC
+				tag = COS
+				tag = PAN
+				tag = COL
+				tag = VEN
+			}
+		}
+	}
+
+	default = no
+	continuous_focus_position = { x = 20 y = 1000 }
+}

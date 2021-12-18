@@ -1,0 +1,26 @@
+state={
+	id=851
+	name="STATE_851"
+	provinces={
+		9377 
+	}
+
+	history={
+		add_core_of = GDL
+		owner = FRA
+		victory_points = {
+			9377 1 
+		}
+		buildings = {
+			infrastructure = 4
+			9377 = {
+				naval_base = 2
+
+			}
+		}
+	}
+
+	manpower=210003
+	state_category = small_island
+	buildings_max_level_factor=1.000
+}

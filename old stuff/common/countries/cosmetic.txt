@@ -1,0 +1,19 @@
+PUE_anarchism = {
+	color = rgb { 204 0 0 }
+	color_ui = rgb { 35 35 35 }
+}
+
+PUE_anarchism = {
+	color = rgb { 204 0 0 }
+	color_ui = rgb { 35 35 35 }
+}
+
+PUE_caribbean_anarchism = {
+	color = rgb { 204 0 0 }
+	color_ui = rgb { 35 35 35 }
+}
+
+DOM_PUE_anarchism = {
+	color = rgb { 204 0 0 }
+	color_ui = rgb { 35 35 35 }
+}

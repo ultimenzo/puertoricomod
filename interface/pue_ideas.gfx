@@ -1,0 +1,21 @@
+spriteTypes = {	
+	SpriteType = {
+		name = "GFX_idea_defense_of_the_caribbean"
+		textureFile = "gfx//interface//ideas//defense_of_the_caribbean.dds"	
+	}
+
+	SpriteType = {
+		name = "GFX_PUE_ramon_mirabal_advisor"
+		textureFile = "gfx//interface//ideas//pue_ramon_mirabal_advisor.dds"	
+	}
+
+	SpriteType = {
+		name = "GFX_PUE_pedro_campos_advisor"
+		textureFile = "gfx//interface//ideas//pue_pedro_campos_advisor.dds"	
+	}
+
+	SpriteType = {
+		name = "GFX_PUE_luis_marin"
+		textureFile = "gfx//interface//ideas//pue_luis_munoz_marin_advisor.dds"	
+	}
+}

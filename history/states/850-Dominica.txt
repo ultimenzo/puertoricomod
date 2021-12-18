@@ -1,0 +1,26 @@
+state={
+	id=850
+	name="STATE_822"
+	provinces={
+		7123 
+	}
+
+	history={
+		add_core_of = BAS
+		owner = ENG
+		victory_points = {
+			7123 1 
+		}
+		buildings = {
+			infrastructure = 4
+			7123 = {
+				naval_base = 2
+
+			}
+		}
+	}
+	
+	manpower=51100
+	state_category = small_island
+	buildings_max_level_factor=1.000
+}

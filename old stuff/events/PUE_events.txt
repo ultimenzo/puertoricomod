@@ -1,0 +1,784 @@
+add_namespace = pue
+######################
+### COUNTRY EVENTS ###
+######################
+country_event = {
+	id = pue.1
+	title = pue.1.t
+	desc = pue.1.d
+
+	is_triggered_only = yes
+	option = { # Declare martial law immediately.
+		name = pue.1.a
+		ai_chance = {
+			factor = 75
+		}
+		PUE = {
+			country_event = pue.2
+			add_timed_idea = {
+				idea = pue_martial_law
+				days = 140
+			}
+		}
+
+		hidden_effect = {
+			news_event = pue_news.1
+		}
+	}
+
+	option = { # We must not cause any more social unrest.
+		name = pue.1.b
+		ai_chance = {
+			factor = 25
+		}
+	}
+}
+
+country_event = {
+	id = pue.2
+	title = pue.2.t
+	desc = pue.2.d
+
+	is_triggered_only = yes
+	option = { # We must remove the Yankees from our shores.
+		name = pue.2.a
+		ai_chance = {
+			factor = 75
+		}
+		
+		effect_tooltip = {
+			PUE = {
+				add_timed_idea = {
+					idea = pue_martial_law
+					days = 140
+				}
+			}	
+		}
+	}
+}
+
+# Puerto Rico asks for support
+country_event = {
+	id = pue.4
+	title = pue.4.t
+	desc = pue.4.d
+
+	is_triggered_only = yes
+	option = {
+		name = pue.4.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				add = 25
+				has_country_flag = pue_sent_envoy 
+			}
+		}
+
+		USA = {
+			add_opinion_modifier = {
+				target = PREV
+				modifier = PUE_supported_independence
+			}
+		}
+
+		IF = {
+			LIMIT = {
+				is_in_faction = yes
+			}
+			leave_faction = yes
+		}
+
+		PUE = {
+			country_event = pue.11
+			add_to_faction = PREV
+		}
+
+		THIS = {
+			add_ai_strategy = {
+				type = alliance
+				id = "PUE"
+				value = 200
+			}
+		}
+	}
+
+	option = {
+		name = pue.4.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				add = -25
+				has_country_flag = pue_sent_envoy
+			}
+
+			modifier = {
+				add = -50
+				original_tag = PAN
+			}
+		}
+
+		PUE = {
+			country_event = pue.12
+		}
+	}
+}
+
+# Puerto Rico declares independence
+country_event = {
+	id = pue.5
+	title = pue.5.t
+	desc = pue.5.d
+	
+	is_triggered_only = yes
+	option = { # Force them to back down immediately.
+		name = pue.5.a
+		ai_chance = {
+			base = 100
+		}
+
+		add_threat = 3
+		PUE = {
+			country_event = pue.6
+		}
+	}
+
+	option = {
+		name = pue.5.b
+		ai_chance = {
+			base = 0
+		}
+		
+		effect_tooltip = {
+			USA = {
+				set_autonomy ={
+					target = PUE
+					autonomous_state = autonomy_free
+				}
+			}
+		}
+
+		PUE = {
+			country_event = pue.7
+		}
+	}
+}
+
+# United States yields
+country_event = {
+	id = pue.7
+	title = pue.7.t
+	desc = pue.7.d
+	
+	is_triggered_only = yes
+	option = { # We have thrown off our Yankee shackles.
+		name = pue.7.a
+
+		hidden_effect = {
+			every_country = {
+				LIMIT = {
+					is_in_faction_with = PUE
+				}
+				
+				add_ai_strategy = {
+					type = alliance
+					id = "PUE"
+					value = -200
+				}
+				leave_faction = yes
+				give_guarantee = THIS
+			}
+		}
+
+		PUE = {
+			dismantle_faction = yes
+			add_stability = 0.10
+			add_war_support = -0.10
+		}
+
+		USA = {
+			give_guarantee = PREV
+		}
+	}
+}
+
+# United States wants us to back down
+country_event = {
+	id = pue.6
+	title = pue.6.t
+	desc = pue.6.d
+	
+	is_triggered_only = yes
+	option = { # We will ask support from our Carribean brothers.
+		name = pue.6.a
+		ai_chance = {
+			base = 100
+		}
+		create_faction = PUE_caribbean_support
+		add_stability = 0.10
+		add_war_support = 0.10
+
+		every_country = {
+			LIMIT = {
+				OR = {
+					tag = CUB
+					tag = DOM
+					tag = HAI
+					tag = VEN
+					tag = COL
+					tag = PAN
+					tag = HON
+					tag = COS
+					tag = GUA
+					tag = NIC
+					tag = ELS
+				}
+			}
+
+			country_event = pue.4
+		}
+
+		USA = {
+			country_event = {
+				id = pue.8
+				days = 1
+			}
+		}
+
+		HIDDEN_EFFECT = {
+			news_event = pue_news.2
+		}
+	}
+
+	option = { # We back down.
+		name  = pue.6.b
+		ai_chance = {
+			base = 0
+		}
+
+		PUE = {
+			remove_ideas = {
+				pue_martial_law
+				pue_nationalism
+			}
+	
+			set_country_flag = pue_backed_down_independence
+			complete_national_focus = pue_guidance
+		}
+
+		USA = {
+			set_autonomy = {
+				target = PUE
+				autonomy_state = autonomy_dominion
+			}
+		}
+	}
+}
+
+# Carribean Independence Group formed against USA
+country_event = {
+	id = pue.8
+	title = pue.8.t
+	desc = pue.8.d
+	
+	is_triggered_only = yes
+	option = {
+		name = pue.8.a
+		ai_chance = {
+			base = 25
+			modifier = {
+				add = 25
+				has_completed_focus = pue_plea_to_south_america
+			}
+
+			modifier = {
+				add = 15
+				has_completed_focus = pue_plea_to_caribbean
+			}
+		}
+
+		add_threat = -3
+		PUE = {
+			country_event = pue.7
+		}
+	}
+
+	option = { # Let them try and challenge us.
+		name = pue.8.b
+		ai_chance = {
+			base = 50
+
+			modifier = {
+				add = -30
+				AND = {
+					has_completed_focus = pue_plea_to_central_america
+					has_completed_focus = pue_plea_to_south_america
+					has_completed_focus = pue_plea_to_caribbean
+				}
+			}
+
+			modifier = {
+				add = -10
+				has_completed_focus = pue_plea_to_central_america
+				OR = {
+					has_completed_focus = pue_plea_to_south_america
+					has_completed_focus = pue_plea_to_caribbean
+				}
+			}
+		}
+
+		add_threat = 10
+		USA = {
+			add_ideas = {
+				pue_caribbean_resistance
+			}
+
+			declare_war_on = {
+				target = FROM
+				type = annex_everything
+			}
+		}
+
+		hidden_effect = {
+			news_event = pue_news.3
+			PUE = {
+				set_country_flag = PUE_independence_war
+			}
+		}
+
+		PUE = {
+			country_event = pue.16
+		}
+
+		every_country = {
+			LIMIT = {
+				is_in_faction_with = FROM
+				NOT = {
+					tag = FROM
+				}
+			}
+
+			country_event = pue.9
+		}
+	}
+}
+
+# The United States has attacked Puerto Rico
+country_event = {
+	id = pue.9
+	title = pue.9.t
+	desc = pue.9.d
+	is_triggered_only = yes
+
+	option = { # We must defend our Caribbean brother.
+		name = Z.a
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 35
+				has_country_flag = pue_sent_envoy 
+			}
+		}
+
+		FROM = {
+			add_opinion_modifier = {
+				target = PREV
+				modifier = PUE_supported_independence_good
+			}
+		}
+
+		add_to_war = {
+			targeted_alliance = PUE
+			enemy = USA
+			hostility_reason = asked_to_join
+		}
+
+		
+		add_ideas = {
+			pue_defending_independence
+		}
+
+		add_ideas = {
+			extensive_conscription
+		}
+
+		IF = {
+			LIMIT = {
+				OR = {
+					TAG = PAN
+					TAG = HON
+					TAG = NIC
+					TAG = GUA
+					TAG = COS
+					TAG = VEN
+					TAG = CUB
+					TAG = DOM
+					TAG = HAI
+				}
+			}
+
+			add_manpower = 10000
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 2500
+			}
+
+			division_template = {
+				name = "Brigada de Infanteria"
+				division_names_group = SPAN_INFB_02
+			
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+				}
+
+				is_locked = yes
+			}
+
+			THIS = {
+				capital_scope = {
+					create_unit = {
+						division = "name = \"1. Brigada de Infanteria\" division_template = \"Brigada de Infanteria\" start_experience_factor = 0.25" 
+						owner = PREV
+					}
+					create_unit = {
+						division = "name = \"2. Brigada de Infanteria\" division_template = \"Brigada de Infanteria\" start_experience_factor = 0.25" 
+						owner = PREV
+					}
+					create_unit = {
+						division = "name = \"3. Brigada de Infanteria\" division_template = \"Brigada de Infanteria\" start_experience_factor = 0.25" 
+						owner = PREV
+					}
+				}
+			}
+		}
+
+		IF = {
+			LIMIT = {
+				OR = {
+					TAG = VEN
+					TAG = ELS
+				}
+			}
+
+			add_manpower = 10000
+		}
+
+		IF = {
+			LIMIT = {
+				TAG = ELS
+			}
+
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 1500
+			}
+		}
+
+		IF = {
+			LIMIT = {
+				OR = {
+					TAG = COL
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 3000
+			}
+
+			
+			division_template = {
+				name = "Brigada de Infanteria"
+				division_names_group = SPAN_INFB_02
+			
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+				}
+				is_locked = yes
+			}
+
+			THIS = {
+				capital_scope = {
+					create_unit = {
+						division = "name = \"1. Brigada de Infanteria\" division_template = \"Brigada de Infanteria\" start_experience_factor = 0.25" 
+						owner = PREV
+					}
+				}
+			}
+		}
+	}
+
+	option = { # This is not our fight.
+		name = pue.9.b
+		ai_chance = {
+			base = 25
+			modifier = {
+				add = -15
+				has_country_flag = pue_sent_envoy 
+			}
+		}
+
+		leave_faction = yes
+		every_country = {
+			LIMIT = {
+				is_in_faction_with = PUE
+			}
+
+			add_opinion_modifier = {
+				target = PREV
+				modifier = pue_backstabbed_independence
+			}
+
+			country_event = pue.10
+		}
+	}	
+}
+
+# X has back stabbed us.
+country_event = {
+	id = pue.10
+	title = pue.10.t
+	desc = pue.10.d
+	is_triggered_only = yes
+
+	option = { # Darn the traitors!
+		name = pue.10.a
+		ai_chance = {
+			base = 100
+		}
+
+		effect_tooltip = {
+			FROM = {
+				leave_faction = yes
+			}
+		}
+
+		
+
+		add_opinion_modifier = {
+			target = FROM
+			modifier = pue_backstabbed_independence
+		}
+	}
+}
+
+# X has supported us
+country_event = {
+	id = pue.11
+	title = pue.11.t
+	desc = pue.11.d
+	is_triggered_only = yes
+
+	option = {
+		name = pue.11.a
+		effect_tooltip = {
+			PUE = {
+				add_to_faction = PREV.FROM
+			}		
+		}
+	}
+}
+
+# X is unable to support us
+country_event = {
+	id = pue.12
+	title = pue.12.t
+	desc = pue.12.d
+	is_triggered_only = yes
+
+	option = {
+		name = pue.12.a
+	}
+}
+
+# Puerto Rico proposes peace.
+country_event = {
+	id = pue.13
+	title = pue.13.t
+	desc = pue.13.d
+	is_triggered_only = yes
+	
+	option = { # We accept these terms.
+		name = pue.13.a
+		ai_chance = {
+			base = 100
+		}
+
+		remove_ideas = {
+			pue_caribbean_resistance
+		}
+		PAN = {
+			transfer_state = 685
+		}
+		white_peace = PUE
+		country_event = pue.14
+	}
+
+	option = { # We reject.
+		name = pue.13.b
+		news_event = pue_news.6
+	}
+}
+
+# United States accepts peace deal.
+country_event = {
+	id = pue.14
+	title = pue.14.t
+	desc = pue.14.d
+	
+	is_triggered_only = yes
+	option = { # We have thrown off our Yankee shackles.
+		name = pue.14.a
+
+		hidden_effect = {
+			every_other_country = {
+				LIMIT = {
+					is_in_faction_with = PUE
+				}
+				
+				add_ai_strategy = {
+					type = alliance
+					id = "PUE"
+					value = -200
+				}
+				remove_ideas = {
+					pue_defending_independence
+				}
+				leave_faction = yes
+				country_event = pue.15
+			}
+			news_event = pue_news.5
+		}
+		dismantle_faction = yes
+		remove_ideas = {
+			pue_defending_independence
+		}
+		add_ideas = {
+			pue_defeated_the_eagle
+		}
+	}
+}
+
+# We've defeated the eagle!
+country_event = {
+	id = pue.15
+	title = pue.15.t
+	desc = pue.15.d
+	
+	is_triggered_only = yes
+	option = { # We've won!
+		name = pue.14.a
+		add_ideas = {
+			pue_defeated_the_eagle
+		}
+
+		USA = {
+			add_threat = -10
+			give_guarantee = PREV
+		}
+	}
+}
+
+# The United States declares war
+country_event = {
+	id = pue.16
+	title = pue.16.t
+	desc = pue.16.d
+	
+	is_triggered_only = yes
+	option = { # We must win!
+		name = pue.16.a
+		add_ideas = {
+			pue_defending_independence
+		}
+
+		USA = {
+			add_ideas = {
+				pue_caribbean_resistance
+			}
+		}
+	}
+}
+
+# Puerto Rican anarchists send us support.
+country_event = {
+	id = pue.17
+	title = pue.17.t
+	desc = pue.17.d
+		
+	is_triggered_only = yes
+	option = { # We must win!
+		name = pue.17.a
+		effect_tooltip = {
+			add_opinion_modifier = {
+				target = PUE
+				modifier = PUE_supported_us_anarchist_spain
+			}
+
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 1000
+			}
+		}
+	}
+}
+
+# Anarchism in Hispaniola
+country_event = {
+	id = pue.18
+	title = pue.18.t
+	desc = pue.18.d
+
+	is_triggered_only = yes
+	option = { # We shall fight through to absolute victory!
+		name = pue.18.a
+		effect_tooltip = {
+			random_country = {
+				limit = {
+					original_tag = DOM
+					has_government = neutrality
+					is_puppet_of = PUE
+				}
+
+				PUE = {
+					add_to_war = {
+						targeted_alliance = PREV
+						enemy = DOM
+						hostility_reason = asked_to_join
+					}
+					puppet = PREV
+				}
+			}
+		}
+	}
+}
+
+# Anarchism in Hispaniola - Civil War Ends
+country_event = {
+	id = pue.19
+	title = pue.19.t
+	desc = pue.19.d
+
+	is_triggered_only = yes
+	option = { # We shall fight through to absolute victory!
+		name = pue.19.a
+		random_country = {
+			limit = {
+				original_tag = FROM
+				has_government = neutrality
+				is_puppet_of = PUE
+			}
+
+			PUE = {
+				annex_country = {
+					target = FROM
+					transfer_troops = yes
+				}
+			}
+		}
+	}
+}

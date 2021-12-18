@@ -1,0 +1,549 @@
+ideas = {
+	country = {
+		pue_grito_de_lares = {
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+			modifier = {
+				stability_weekly = -0.001
+				autonomy_gain = 0.3
+			}
+		}
+
+		pue_stabalize_the_nation = {
+			allowed = {
+				has_offensive_war = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				stability_weekly_factor = 0.005
+			}
+		}
+
+		pue_agrarian_nation = {
+			picture = generic_agrarian_society
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.10
+				conscription_factor = -0.50
+				industrial_capacity_factory = -0.30
+			}
+		}
+
+		pue_agrarian_nation_industrial = {
+			picture = man_five_year_plan_industry
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+			modifier = {
+				conscription_factor = -0.15
+				industrial_capacity_factory = -0.10
+			}
+		}
+
+		pue_agrarian_nation_industrial_2 = {
+			picture = man_five_year_plan_industry
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.15
+				production_speed_buildings_factor = 0.15
+			}
+		}
+
+		pue_agrarian_nation_strenght = {
+			picture = generic_agrarian_society
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+			modifier = {
+				conscription_factor = -0.25
+				industrial_capacity_factory = -0.25
+			}
+		}
+
+		pue_recent_industrial_funding = {
+			picture = generic_foreign_capital
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.05
+			}
+		}
+
+		pue_martial_law = {
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+			picture = can_patriation
+
+			modifier = {
+				consumer_goods_factor = 0.25
+				political_power_factor = -0.25
+				stability_factor = -0.25
+			}
+		}
+
+		pue_american_government = {
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+			picture = usa_us_air_force
+
+			modifier = {
+				political_power_factor = -0.25
+				stability_factor = -0.50
+				war_support_factor = -0.50
+				conscription_factor = -0.25
+			}
+		}
+
+		pue_nationalism = {
+			allowed = {
+				always = yes
+			}
+
+			picture = chi_war_of_resistance
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.005
+				war_support_factor = 0.05
+				army_core_attack_factor = 0.10
+				army_core_defence_factor = 0.10
+			}
+		}
+
+		pue_supporting_spanish_anarchism = {
+			allowed = {
+				always = yes
+			}
+
+			picture = chi_war_of_resistance
+
+			removal_cost = -1
+
+			modifier = {
+				weekly_manpower = 100
+				army_core_attack_factor = 0.10
+				army_core_defence_factor = 0.10
+			}
+		}
+
+		pue_defending_independence = {
+			picture = GFX_idea_defense_of_the_caribbean
+			allowed = {
+				always = yes
+			}
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.05
+				consumer_goods_factor = -0.15
+				industrial_capacity_factory = 0.25
+			}
+
+			targeted_modifier = {
+				tag = USA
+				attack_bonus_against = 0.25	
+				defense_bonus_against = 0.25	
+			}	
+		}	
+
+		pue_defeated_the_eagle = {
+			picture = GFX_idea_defense_of_the_caribbean
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+			modifier = {
+				political_power_gain = 0.15
+				stability_factor = 0.05
+				war_support_factor = 0.05
+			}
+		}
+
+		pue_caribbean_resistance ={
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = -0.30
+				army_defence_factor = -0.30
+			}
+		}
+		
+		pue_volunteer_forces = {
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+			modifier = {
+				send_volunteer_divisions_required = -0.75
+				send_volunteer_size = 3
+				send_volunteers_tension = -0.50
+			}
+		}
+	}	
+
+	political_advisor = {
+		PUE_federica_montseny = {
+			picture = SPR_federica_montseny
+			allowed = {
+				original_tag = PUE
+			}
+
+			available = {
+				has_completed_focus = pue_an_alternative
+			}
+			
+			traits = { social_revolutionary }
+		}
+
+		PUE_ramon_mirabal_advisor = {
+			picture = PUE_ramon_mirabal_advisor
+			allowed = {
+				original_tag = PUE
+			}
+
+			available = {
+				NOT = {
+					has_completed_focus = pue_an_alternative
+					has_completed_focus = pue_guidance
+					has_idea = PUE_pedros_campos_advisor
+					has_idea = PUE_luis_munoz_marin
+				}
+			}
+			traits = { communist_revolutionary }
+		}
+
+		PUE_pedros_campos_advisor = {
+			picture = PUE_pedro_campos_advisor
+			allowed = {
+				original_tag = PUE
+			}
+
+			available = {
+				NOT = {
+					has_completed_focus = pue_an_alternative
+					has_completed_focus = pue_guidance
+					has_idea = PUE_ramon_mirabal_advisor
+					has_idea = PUE_luis_munoz_marin
+				}
+			}
+			
+			traits = { fascist_demagogue }
+		}
+
+		PUE_luis_munoz_marin = {
+			picture = PUE_luis_marin
+			allowed = {
+				original_tag = PUE
+			}
+
+			available = {
+				NOT = {
+					has_completed_focus = pue_an_alternative
+					has_idea = PUE_ramon_mirabal_advisor
+					has_idea = PUE_pedros_campos_advisor
+				}
+			}
+			
+			traits = { democratic_reformer }
+		}
+	}
+
+	theorist = {
+		PUE_council_of_theorists = { # Anarchists
+			ledger = military
+			picture = SPR_anarchist_council
+					
+			allowed = {
+				original_tag = PUE
+			}
+
+			visible = {
+				has_completed_focus = pue_an_alternative
+			}
+
+			available = {
+				has_completed_focus = pue_an_alternative
+			}
+			
+			research_bonus = {
+				land_doctrine = 0.05
+				naval_doctrine = 0.05
+				air_doctrine = 0.05
+			}
+			
+			traits = { council_of_theorists }
+		}
+	}
+
+	army_chief = {
+		PUE_defensive_military_council = { # Anarchist
+			picture = SPR_anarchist_council
+			allowed = {
+				original_tag = PUE
+			}
+
+			visible = {
+				has_completed_focus = pue_an_alternative
+			}
+
+			available = {
+				has_completed_focus = pue_an_alternative
+			}
+			
+			traits = { army_chief_defensive_2 }
+		}
+
+		PUE_offensive_military_council = { # Anarchist
+			picture = SPR_anarchist_council
+			allowed = {
+				original_tag = PUE
+			}
+
+			visible = {
+				has_completed_focus = pue_an_alternative
+			}
+
+			available = {
+				has_completed_focus = pue_an_alternative
+			}
+			traits = { army_chief_offensive_2 }
+		}
+
+		PUE_organizational_military_council = { # Anarchist
+			picture = SPR_anarchist_council
+			allowed = {
+				original_tag = PUE
+			}
+
+			visible = {
+				has_completed_focus = pue_an_alternative
+			}
+
+			available = {
+				has_completed_focus = pue_an_alternative
+			}
+			
+			traits = { army_chief_organizational_2 }
+		}
+	}
+
+	air_chief = {
+		PUE_air_safety_aviation_council = { # Anarchist	
+			picture = SPR_anarchist_council
+			allowed = {
+				original_tag = PUE
+			}
+
+			visible = {
+				has_completed_focus = pue_an_alternative
+			}
+
+			available = {
+				has_completed_focus = pue_an_alternative
+			}
+			traits = { air_chief_safety_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		PUE_all_weather_aviation_council = { # Anarchist
+			picture = SPR_anarchist_council
+			allowed = {
+				original_tag = PUE
+			}
+
+			visible = {
+				has_completed_focus = pue_an_alternative
+			}
+
+			available = {
+				has_completed_focus = pue_an_alternative
+			}
+			
+			traits = { air_chief_all_weather_2 }
+		}
+	}
+
+	high_command = {
+		PUE_infantry_military_council = { # Anarchist
+			ledger = army
+			picture = SPR_anarchist_council
+			allowed = {
+				original_tag = PUE
+			}
+
+			visible = {
+				has_completed_focus = pue_an_alternative
+			}
+
+			available = {
+				has_completed_focus = pue_an_alternative
+			}
+			
+			traits = { army_infantry_3 }
+		}
+
+		PUE_army_regrouping_military_council = { # Anarchist
+			ledger = army
+			picture = SPR_anarchist_council
+			allowed = {
+				original_tag = PUE
+			}
+
+			visible = {
+				has_completed_focus = pue_an_alternative
+			}
+
+			available = {
+				has_completed_focus = pue_an_alternative
+			}
+			
+			traits = { army_regrouping_2 }
+		}
+
+		PUE_concealment_military_council = { # Anarchist
+			ledger = army
+			
+			picture = SPR_anarchist_council
+			
+			allowed = {
+				original_tag = PUE
+			}
+
+			visible = {
+				has_completed_focus = pue_an_alternative
+			}
+
+			available = {
+				has_completed_focus = pue_an_alternative
+			}
+			
+			traits = { army_concealment_2 }
+		}
+
+		PUE_naval_strike_aviation_council = { # Anarchist
+			ledger = navy
+			
+			picture = SPR_anarchist_council
+			allowed = {
+				original_tag = PUE
+			}
+
+			visible = {
+				has_completed_focus = pue_an_alternative
+			}
+
+			available = {
+				has_completed_focus = pue_an_alternative
+			}
+			traits = { air_naval_strike_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		PUE_close_air_support_aviation_council = { # Anarchist
+			ledger = air
+			
+			picture = SPR_anarchist_council
+			allowed = {
+				original_tag = PUE
+			}
+
+			visible = {
+				has_completed_focus = pue_an_alternative
+			}
+
+			available = {
+				has_completed_focus = pue_an_alternative
+			}
+			traits = { air_close_air_support_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		PUE_logistics_naval_council = { # Anarchist
+			ledger = navy
+			
+			picture = SPR_anarchist_council
+			allowed = {
+				original_tag = PUE
+			}
+
+			visible = {
+				has_completed_focus = pue_an_alternative
+			}
+
+			available = {
+				has_completed_focus = pue_an_alternative
+			}
+			
+			traits = { navy_fleet_logistics_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		PUE_anti_submarine_naval_council = { # Anarchist
+			ledger = navy
+			
+			picture = SPR_anarchist_council
+			allowed = {
+				original_tag = PUE
+			}
+
+			visible = {
+				has_completed_focus = pue_an_alternative
+			}
+
+			available = {
+				has_completed_focus = pue_an_alternative
+			}
+			
+			traits = { navy_anti_submarine_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}	

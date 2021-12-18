@@ -1,0 +1,55 @@
+ideas = {
+	country = {
+		PUE_american_government = {
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+			picture = usa_us_air_force
+
+			modifier = {
+				political_power_factor = -0.25
+				war_support_factor = -0.50
+				conscription_factor = -0.25
+			}
+		}
+
+		PUE_payment_for_belize = {
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		PUE_payment_for_belize_puerto_rico = {
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.05
+			}
+		}
+
+		PUE_caribbean_supremacy = {
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+			modifier = {
+				stability_weekly = 0.01
+				war_support_weekly = 0.01
+				political_power_gain = 0.5
+				political_power_factor = 0.15
+				compliance_gain = 0.15
+			}
+		}
+	}
+}

@@ -1,0 +1,820 @@
+# Code comes from WP ethiopia decision
+PUE_defeat_usa_category = {
+	PUE_defeat_usa = {
+
+		allowed = { original_tag = PUE }
+
+		visible = {
+			has_war_with = USA
+			has_country_flag = PUE_independence_war
+		}
+
+		icon = GFX_decision_generic_prepare_civil_war
+
+		available = {
+			685 = {
+				is_controlled_by_ROOT_or_ally = yes
+			}
+			has_war_with = USA
+			USA = { is_in_faction = no }
+
+			hidden_trigger = {
+				has_country_flag = PUE_independence_war
+				NOT = {
+					has_country_flag = PUE_wp_pnm_deal
+				}
+			}
+		}
+
+		fire_only_once = yes
+		
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = PUE_wp_pnm_deal
+			}
+
+			USA = { country_event = pue.13 }
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = {
+				PAN = {
+					transfer_state = 685
+				}
+
+				every_country = {
+					LIMIT = {
+						is_in_faction_with = PUE
+					}
+
+					add_ideas = {
+						pue_defeated_the_eagle
+					}
+				}
+				white_peace = USA
+			}
+		}
+
+		ai_will_do = {
+			factor = 20000 #Ethiopia should be very into this idea
+		}
+	}
+}
+
+debug_decisions = {
+	PUE_reset_and_trigger_event_chain = {
+		allowed = {
+			original_tag = PUE
+		}
+
+		icon = GFX_decision_generic_prepare_civil_war
+
+		available = {
+			always = yes
+		}
+
+		complete_effect = {
+			clr_country_flag = PUE_wp_pnm_deal
+			clr_country_flag = PUE_independence_war
+			USA = {
+				transfer_state = 685
+			}
+
+			USA = {
+				country_event = pue.5
+			}
+		} 
+	}
+}
+
+PUE_anarchist_integration = {
+	PUE_integrate_cuba = {
+		allowed = {
+			original_tag = PUE
+		}
+		fire_only_once = yes
+		visible = {
+			has_cosmetic_tag = PUE_caribbean_anarchism
+			any_state = {
+				is_core_of = CUB
+				is_controlled_by = PUE
+			}
+		}
+
+		fire_only_once = yes
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = form_country_cuba_required_states_tt
+				controls_state = 315
+				controls_state = 825
+				controls_state = 826
+				controls_state = 827
+			}
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = form_country_cuba_coring_states_tt
+			hidden_effect = {
+				315 = { 
+					add_core_of = PUE
+					remove_claim_by = PUE
+				}
+				825 = {
+					add_core_of = PUE 
+					remove_claim_by = PUE
+				}
+				826 = { 
+					add_core_of = PUE
+					remove_claim_by = PUE
+			 	}
+				827 = {
+					add_core_of = PUE
+					remove_claim_by = PUE
+				}
+				824	= { 
+					add_core_of = PUE
+					remove_claim_by = PUE
+				}
+			}
+		}
+	}
+
+	PUE_integrate_dominican_republic = {
+		allowed = {
+			original_tag = PUE
+		}
+		fire_only_once = yes
+		visible = {
+			has_cosmetic_tag = PUE_caribbean_anarchism
+			any_state = {
+				is_core_of = DOM
+				is_controlled_by = PUE
+			}
+		}
+
+		fire_only_once = yes
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = form_country_dominican_republic_required_states_tt
+				controls_state = 319
+				controls_state = 813
+				controls_state = 816
+				controls_state = 817
+			}
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = form_country_dominican_republic_coring_states_tt
+			hidden_effect = {
+				319 = { 
+					add_core_of = PUE
+					remove_claim_by = PUE
+				}
+				813 = {
+					add_core_of = PUE
+				}
+				816 = {
+					add_core_of = PUE 
+					remove_claim_by = PUE
+				}
+				817 = {
+					add_core_of = PUE
+					remove_claim_by = PUE	
+				}
+			}
+		}
+	}
+
+	PUE_integrate_haiti = {
+		allowed = {
+			original_tag = PUE
+		}
+		fire_only_once = yes
+		visible = {
+			has_cosmetic_tag = PUE_caribbean_anarchism
+			any_state = {
+				is_core_of = HAI
+				is_controlled_by = PUE
+			}
+		}
+
+		fire_only_once = yes
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = form_country_haiti_required_states_tt
+				controls_state = 815
+				controls_state = 814
+				controls_state = 318
+			}
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = form_country_haiti_coring_states_tt
+			hidden_effect = {
+				815 = { 
+					add_core_of = PUE
+					remove_claim_by = PUE
+				}
+				814 = { 
+					add_core_of = PUE
+					remove_claim_by = PUE
+				}
+				318 = {
+					add_core_of = PUE 
+					remove_claim_by = PUE
+				}
+			}
+		}
+	}
+
+	PUE_integrate_jamaica = {
+		allowed = {
+			original_tag = PUE
+		}
+		fire_only_once = yes
+		visible = {
+			has_cosmetic_tag = PUE_caribbean_anarchism
+			any_state = {
+				is_core_of = JAM
+				is_controlled_by = PUE
+			}
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = form_country_jamaica_required_states_tt
+				controls_state = 689
+				controls_state = 812
+			}
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = form_country_jamaica_coring_states_tt
+			hidden_effect = {
+				689 = { add_core_of = PUE }
+				812 = { 
+					add_core_of = PUE
+					remove_claim_by = PUE
+				}
+			}
+		}
+	}
+
+	PUE_integrate_curacao = {
+		allowed = {
+			original_tag = PUE
+		}
+		fire_only_once = yes
+		visible = {
+			has_cosmetic_tag = PUE_caribbean_anarchism
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = form_country_curacao_required_states_tt
+				controls_state = 695
+			}
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = form_country_curacao_coring_states_tt
+			hidden_effect = {
+				695 = {
+					add_core_of = PUE
+					remove_claim_by = PUE
+				}
+			}
+		}
+	}
+
+	PUE_integrate_trinidad_and_tobago = {
+		allowed = {
+			original_tag = PUE
+		}
+		fire_only_once = yes
+		visible = {
+			has_cosmetic_tag = PUE_caribbean_anarchism
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = form_country_trinidad_required_states_tt
+				controls_state = 691
+			}
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = form_country_trinidad_coring_states_tt
+			hidden_effect = {
+				691 = { 
+					add_core_of = PUE
+					remove_claim_by = PUE
+				}
+			}
+		}
+	}
+
+	PUE_integrate_bahamas = {
+		allowed = {
+			original_tag = PUE
+		}
+		fire_only_once = yes
+		visible = {
+			has_cosmetic_tag = PUE_caribbean_anarchism
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = form_country_bahamas_required_states_tt
+				controls_state = 693
+				controls_state = 690
+			}
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = form_country_bahamas_coring_states_tt
+			hidden_effect = {
+				693 = { 
+					add_core_of = PUE
+					remove_claim_by = PUE
+				}
+
+				690 = {
+					add_core_of = PUE
+					remove_claim_by = PUE
+				}
+			}
+		}
+	}
+	
+	PUE_integrate_grenada = {
+		allowed = {
+			original_tag = PUE
+		}
+		fire_only_once = yes
+		visible = {
+			has_cosmetic_tag = PUE_caribbean_anarchism
+		}
+
+		available = {
+			controls_state = 818
+		}
+
+		complete_effect = {
+			818 = { 
+				add_core_of = PUE
+			}
+
+			hidden_effect = {
+				818 = {
+					remove_claim_by = PUE
+				}
+			}
+		}
+	}
+
+	PUE_integrate_st_vincent = {
+		allowed = {
+			original_tag = PUE
+		}
+		fire_only_once = yes
+		visible = {
+			has_cosmetic_tag = PUE_caribbean_anarchism
+		}
+
+		available = {
+			controls_state = 819
+		}
+
+		complete_effect = {
+			819 = { 
+				add_core_of = PUE
+			}
+
+			hidden_effect = {
+				819 = {
+					remove_claim_by = PUE
+				}
+			}
+		}
+	}
+
+	PUE_integrate_barbados = {
+		allowed = {
+			original_tag = PUE
+		}
+		fire_only_once = yes
+		visible = {
+			has_cosmetic_tag = PUE_caribbean_anarchism
+		}
+
+		available = {
+			controls_state = 820
+		}
+
+		complete_effect = {
+			820 = { 
+				add_core_of = PUE
+			}
+
+			hidden_effect = {
+				820 = {
+					remove_claim_by = PUE
+				}
+			}
+		}
+	}
+
+	PUE_integrate_martinique = {
+		allowed = {
+			original_tag = PUE
+		}
+
+		visible = {
+			has_cosmetic_tag = PUE_caribbean_anarchism
+		}
+
+		available = {
+			controls_state = 821
+		}
+
+		complete_effect = {
+			821 = { 
+				add_core_of = PUE
+			}
+
+			hidden_effect = {
+				821 = {
+					remove_claim_by = PUE
+				}
+			}
+		}
+	}
+
+	PUE_integrate_dominica = {
+		allowed = {
+			original_tag = PUE
+		}
+		fire_only_once = yes
+		visible = {
+			has_cosmetic_tag = PUE_caribbean_anarchism
+		}
+
+		available = {
+			controls_state = 822
+		}
+
+		complete_effect = {
+			822 = { 
+				add_core_of = PUE
+			}
+
+			hidden_effect = {
+				822 = {
+					remove_claim_by = PUE
+				}
+			}
+		}
+	}
+
+	PUE_integrate_guadeloupe = {
+		allowed = {
+			original_tag = PUE
+		}
+		fire_only_once = yes
+		visible = {
+			has_cosmetic_tag = PUE_caribbean_anarchism
+		}
+
+		available = {
+			controls_state = 823
+		}
+
+		complete_effect = {
+			823 = { 
+				add_core_of = PUE
+			}
+
+			hidden_effect = {
+				823 = {
+					remove_claim_by = PUE
+				}
+			}
+		}
+	}
+
+	PUE_integrate_montserrat = {
+		allowed = {
+			original_tag = PUE
+		}
+		fire_only_once = yes
+		visible = {
+			has_cosmetic_tag = PUE_caribbean_anarchism
+		}
+
+		available = {
+			controls_state = 308
+		}
+
+		complete_effect = {
+			308 = { 
+				add_core_of = PUE
+			}
+
+			hidden_effect = {
+				308 = {
+					remove_claim_by = PUE
+				}
+			}
+		}
+	}
+
+	PUE_integrate_st_lucia = {
+		allowed = {
+			original_tag = PUE
+		}
+		fire_only_once = yes
+		visible = {
+			has_cosmetic_tag = PUE_caribbean_anarchism
+		}
+
+		available = {
+			controls_state = 692
+		}
+
+		complete_effect = {
+			692 = { 
+				add_core_of = PUE
+			}
+
+			hidden_effect = {
+				692 = {
+					remove_claim_by = PUE
+				}
+			}
+		}
+	}
+
+	PUE_integrate_anguilla = {
+		allowed = {
+			original_tag = PUE
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			has_cosmetic_tag = PUE_caribbean_anarchism
+		}
+
+		available = {
+			controls_state = 694
+		}
+
+		complete_effect = {
+			694 = { 
+				add_core_of = PUE
+			}
+
+			hidden_effect = {
+				694 = {
+					remove_claim_by = PUE
+				}
+			}
+		}
+	}
+
+
+	PUE_proclaim_caribbean_anarchism = {
+		allowed = {
+			original_tag = PUE
+		}
+
+		icon = GFX_decision_generic_prepare_civil_war
+
+		fire_only_once = yes
+
+		visible = {
+			#has_completed_focus = PUE_caribbean_anarchism
+		}
+
+		available = {
+			#has_completed_focus = PUE_caribbean_anarchism
+			custom_trigger_tooltip = {
+				tooltip = form_country_caribbean_tt
+				any_state = {
+					PUE_is_caribbean_state = yes
+					is_controlled_by = PUE
+				}
+			}
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = PUE_caribbean_anarchism
+			every_state = {
+				LIMIT = {
+					PUE_is_caribbean_state = yes
+				}
+
+				add_claim_by = PUE
+			}
+		} 
+	}
+}
+
+PUE_anarchist_revolts = {
+	PUE_revolt_hispaniola = {
+		allowed = {
+			original_tag = PUE
+		}
+
+		visible = {
+			#has_completed_focus = pue_spread_the_revolution
+		}
+
+		available = {
+			OR = {
+				country_exists = DOM
+				country_exists = HAI
+			}
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = pue_anarchist_uprising_warn
+			every_country = {
+				LIMIT = {
+					has_war_with = DOM
+				}
+
+				white_peace = THIS
+			}
+			DOM = {
+				annex_country = {
+					target = HAI
+					transfer_troops = yes
+				}
+
+				set_rule = {
+					can_join_factions = no
+				}
+
+				leave_faction = yes
+			}
+			
+			custom_effect_tooltip = pue_anarchist_uprising_dom
+			country_event = pue.18
+			HIDDEN_EFFECT = {
+				every_state = {
+					LIMIT = {
+						is_core_of = HAI
+					}
+
+					add_core_of = DOM
+				}
+				
+				DOM = {
+					start_civil_war = {
+						ideology = communism
+						size = 0.1
+						states = {
+							813
+						}
+
+						keep_unit_leaders_trigger = {
+							always = yes
+						}
+					}
+				}
+
+				random_country = {
+					limit = {
+						original_tag = DOM
+						has_government = communism
+						NOT = { tag = DOM }
+					}
+					set_politics = {
+						ruling_party = neutrality
+					}
+					set_political_party = {
+						ideology = neutrality
+						popularity = 100
+					}
+					set_party_name = { ideology = neutrality long_name = SPR_neutrality_anarchism_party_long name = SPR_neutrality_anarchism_party }
+					set_cosmetic_tag = DOM_PUE_anarchism
+					set_country_flag = PUE_revolt_anarchism_flag
+					retire_country_leader = yes
+					create_country_leader = {
+						name = "Anarchist Commune"
+						desc = "POLITICS_ANARCHIST_COMMUNE_DESC"
+						picture = "GFX_portrait_SPR_anarchist_commune"
+						expire = "1965.1.1"
+						ideology = anarchism
+						traits = {
+						}
+					}
+					
+
+					PUE = {
+						add_to_war = {
+							targeted_alliance = PREV
+							enemy = DOM
+							hostility_reason = asked_to_join
+						}
+						puppet = PREV
+					}
+				}
+			}
+		}
+	}
+
+	PUE_revolt_cuba = {
+		allowed = {
+			original_tag = PUE
+		}
+
+		visible = {
+			#has_completed_focus = pue_spread_the_revolution
+		}
+
+		available = {
+			OR = {
+				country_exists = DOM
+				country_exists = HAI
+			}
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = pue_anarchist_uprising_warn
+			every_country = {
+				LIMIT = {
+					has_war_with = CUB
+				}
+
+				white_peace = THIS
+			}
+			CUB = {
+				set_rule = {
+					can_join_factions = no
+				}
+
+				leave_faction = yes
+			}
+			
+			custom_effect_tooltip = pue_anarchist_uprising_dom
+			country_event = pue.18
+			HIDDEN_EFFECT = {
+				CUB = {
+					start_civil_war = {
+						ideology = communism
+						size = 0.1
+						states = {
+							825
+						}
+
+						keep_unit_leaders_trigger = {
+							always = yes
+						}
+					}
+
+					random_country = {
+						limit = {
+							original_tag = PREV
+							has_government = communism
+							NOT = { tag = PREV }
+						}
+						set_politics = {
+							ruling_party = neutrality
+						}
+						set_political_party = {
+							ideology = neutrality
+							popularity = 100
+						}
+						set_party_name = { ideology = neutrality long_name = SPR_neutrality_anarchism_party_long name = SPR_neutrality_anarchism_party }
+						set_cosmetic_tag = DOM_PUE_anarchism
+						set_country_flag = PUE_revolt_anarchism_flag
+						retire_country_leader = yes
+						create_country_leader = {
+							name = "Anarchist Commune"
+							desc = "POLITICS_ANARCHIST_COMMUNE_DESC"
+							picture = "GFX_portrait_SPR_anarchist_commune"
+							expire = "1965.1.1"
+							ideology = anarchism
+							traits = {
+							}
+						}
+						
+	
+						PUE = {
+							add_to_war = {
+								targeted_alliance = PREV
+								enemy = DOM
+								hostility_reason = asked_to_join
+							}
+							puppet = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+}
